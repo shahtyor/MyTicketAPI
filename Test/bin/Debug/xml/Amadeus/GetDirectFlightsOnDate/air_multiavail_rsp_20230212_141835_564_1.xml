@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Air_MultiAvailabilityReply xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <errorOrWarningSection xmlns="http://xml.amadeus.com/SATRSP_16_1_1A">
+    <errorOrWarningInfo>
+      <error>
+        <code>A08</code>
+        <type>001</type>
+        <listResponsible>AMD</listResponsible>
+      </error>
+    </errorOrWarningInfo>
+    <textInformation>
+      <freeTextQualification>
+        <codedIndicator>3</codedIndicator>
+      </freeTextQualification>
+      <freeText>CHECK DATE</freeText>
+    </textInformation>
+  </errorOrWarningSection>
+</Air_MultiAvailabilityReply>

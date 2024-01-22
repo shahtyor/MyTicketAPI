@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2EB05FD2-01DD-4B91-BDE9-2EB1C77B5005}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAE</RootNamespace>
+    <AssemblyName>SAE</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Amadeus.cs" />
+    <Compile Include="AmadeusSOAP.cs" />
+    <Compile Include="AmadeusWSExtension.cs" />
+    <Compile Include="AmplitudeEventClasses.cs" />
+    <Compile Include="DataClasses.cs" />
+    <Compile Include="MySoapExtension.cs" />
+    <Compile Include="MySoapHeaders.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\AmadeusPRD\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\AmadeusPRD\Air_MultiAvailabilityReply.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\AmadeusPRD\Air_MultiAvailabilityReply_16_1_1A.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\AmadeusPRD\Air_MultiAvailability_16_1_1A.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\AmadeusPRD\AMA2011Y.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\AmadeusPRD\AMA2012B.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\AmadeusPRD\AMA2012B0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\AmadeusPRD\AMA2012B1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\AmadeusPRD\AMA_WSLink.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\AmadeusPRD\Command_CrypticReply.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\AmadeusPRD\Command_CrypticReply_07_3_1A.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\AmadeusPRD\Command_Cryptic_07_3_1A.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\AmadeusPRD\Custom1_TST_1.wsdl" />
+    <None Include="Web References\AmadeusPRD\Custom1_TST_10.wsdl" />
+    <None Include="Web References\AmadeusPRD\Fare_MasterPricerTravelBoardSearchReply.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\AmadeusPRD\Fare_MasterPricerTravelBoardSearchReply_14_3_1A.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\AmadeusPRD\Fare_MasterPricerTravelBoardSearch_14_3_1A.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\AmadeusPRD\IATA_Proxy.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\AmadeusPRD\OTA_Proxy.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\AmadeusPRD\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\AmadeusPRD\Security_SignOutReply.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\AmadeusPRD\Security_SignOutReply_04_1_1A.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\AmadeusPRD\Security_SignOut_04_1_1A.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="D:\ProjectsAgenda\Custom1_TST_1.0\Custom1_TST_1.0_Technical.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\AmadeusPRD\</RelPath>
+      <UpdateFromURL>D:\ProjectsAgenda\Custom1_TST_1.0\Custom1_TST_1.0_Technical.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>SAE_AmadeusPRD_Custom1_PDT_1_0_Services</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

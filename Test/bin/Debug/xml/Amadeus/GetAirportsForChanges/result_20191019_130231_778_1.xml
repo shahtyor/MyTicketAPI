@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GetAirportsForChanges_Result xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <AirportsForChanges>
+    <string>LED</string>
+    <string>SVX</string>
+    <string>KJA</string>
+    <string>SGC</string>
+    <string>TOF</string>
+    <string>OMS</string>
+    <string>PEE</string>
+    <string>CEK</string>
+    <string>TJM</string>
+    <string>KZN</string>
+    <string>MRV</string>
+    <string>KUF</string>
+    <string>KRR</string>
+    <string>NJC</string>
+    <string>IKT</string>
+    <string>NOZ</string>
+    <string>NUX</string>
+    <string>ABA</string>
+    <string>BTK</string>
+    <string>NSK</string>
+    <string>YKS</string>
+  </AirportsForChanges>
+  <Origins>
+    <string>VKO</string>
+    <string>DME</string>
+    <string>SVO</string>
+  </Origins>
+  <Destinations>
+    <string>OVB</string>
+  </Destinations>
+</GetAirportsForChanges_Result>

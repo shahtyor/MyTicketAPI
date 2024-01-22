@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Security_SignOutReply xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <processStatus xmlns="http://xml.amadeus.com/VLSSOR_04_1_1A">
+    <statusCode>P</statusCode>
+  </processStatus>
+</Security_SignOutReply>

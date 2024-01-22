@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Air_MultiAvailability xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <messageActionDetails xmlns="http://xml.amadeus.com/SATRQT_07_1_1A">
+    <functionDetails>
+      <actionCode>48</actionCode>
+    </functionDetails>
+  </messageActionDetails>
+  <requestSection xmlns="http://xml.amadeus.com/SATRQT_07_1_1A">
+    <availabilityProductInfo>
+      <availabilityDetails>
+        <departureDate>280419</departureDate>
+      </availabilityDetails>
+      <departureLocationInfo>
+        <cityAirport>MOW</cityAirport>
+      </departureLocationInfo>
+      <arrivalLocationInfo>
+        <cityAirport>LED</cityAirport>
+      </arrivalLocationInfo>
+    </availabilityProductInfo>
+    <availabilityOptions>
+      <productTypeDetails>
+        <typeOfRequest>TN</typeOfRequest>
+      </productTypeDetails>
+      <optionInfo>
+        <type>NDC</type>
+        <arguments>OD</arguments>
+      </optionInfo>
+    </availabilityOptions>
+  </requestSection>
+</Air_MultiAvailability>

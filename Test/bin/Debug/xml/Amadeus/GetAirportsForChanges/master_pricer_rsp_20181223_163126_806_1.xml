@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Fare_MasterPricerTravelBoardSearchReply xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <errorMessage xmlns="http://xml.amadeus.com/FMPTBR_16_3_1A">
+    <applicationError>
+      <applicationErrorDetail>
+        <error>920</error>
+      </applicationErrorDetail>
+    </applicationError>
+    <errorMessageText>
+      <freeTextQualification>
+        <textSubjectQualifier>1</textSubjectQualifier>
+      </freeTextQualification>
+      <description>Past date/time not allowed</description>
+    </errorMessageText>
+  </errorMessage>
+</Fare_MasterPricerTravelBoardSearchReply>

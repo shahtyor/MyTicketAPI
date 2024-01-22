@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <string>SVX</string>
+  <string>KGD</string>
+  <string>AER</string>
+  <string>KUF</string>
+  <string>VOZ</string>
+  <string>ARH</string>
+  <string>ROV</string>
+  <string>KZN</string>
+  <string>UFA</string>
+  <string>KRR</string>
+  <string>MRV</string>
+  <string>PEE</string>
+  <string>SCW</string>
+  <string>CEK</string>
+  <string>OVB</string>
+  <string>OMS</string>
+  <string>TJM</string>
+</ArrayOfString>

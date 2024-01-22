@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://xml.amadeus.com/VLSSOQ_04_1_1A" elementFormDefault="qualified" targetNamespace="http://xml.amadeus.com/VLSSOQ_04_1_1A" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Security_SignOut">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">New Sign Out</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="conversationClt" type="ConversationIDType">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">It contains conversation properties between the SI and the JFE.</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ConversationIDType">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">This segment stores all conversation porperties in the core of the message</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="senderIdentification" type="AlphaNumericString_Length1To35">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Sender identification</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="recipientIdentification" type="AlphaNumericString_Length1To35">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Recipient identification</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="senderInterchangeControlReference" type="AlphaNumericString_Length1To14">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Sender's interchange control reference</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="recipientInterchangeControlReference" type="AlphaNumericString_Length1To14">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Recipient's interchange control reference</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="AlphaNumericString_Length1To35">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Format limitations: an..35</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="35" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AlphaNumericString_Length1To14">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Format limitations: an..14</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="14" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

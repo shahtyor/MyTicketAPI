@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Command_CrypticReply xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <longTextString xmlns="http://xml.amadeus.com/HSFRES_07_3_1A">
+    <textStringDetails>/$DD DME
+DME TIME IS 1220/1220P ON SUN12FEB23
+DME IS SAME AS MOW TIME
+ </textStringDetails>
+  </longTextString>
+</Command_CrypticReply>

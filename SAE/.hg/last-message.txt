@@ -1,0 +1,1 @@
+Убрана проверка на ошибку типа 001 и EC в singleCityPairInfo/cityPairErrorOrWarning

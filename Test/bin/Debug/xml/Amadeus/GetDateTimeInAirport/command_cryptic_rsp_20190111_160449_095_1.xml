@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Command_CrypticReply xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <longTextString xmlns="http://xml.amadeus.com/HSFRES_07_3_1A">
+    <textStringDetails>/$DD OVB
+OVB TIME IS 2004/0804P ON FRI11JAN19
+OVB IS 05HRS 00MIN LATER
+ </textStringDetails>
+  </longTextString>
+</Command_CrypticReply>

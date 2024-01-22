@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <string>TOF</string>
+  <string>SVX</string>
+  <string>HMA</string>
+  <string>TJM</string>
+  <string>OMS</string>
+  <string>LED</string>
+  <string>SGC</string>
+  <string>NJC</string>
+  <string>PEE</string>
+  <string>KUF</string>
+  <string>KRR</string>
+  <string>KJA</string>
+  <string>YKS</string>
+  <string>MRV</string>
+</ArrayOfString>

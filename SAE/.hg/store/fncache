@@ -1,0 +1,13 @@
+data/DataClasses.cs.i
+data/app.config.i
+data/SAE.csproj.i
+data/AmadeusSOAP.cs.i
+data/Amadeus.cs.i
+data/MySoapHeaders.cs.i
+data/Properties/AssemblyInfo.cs.i
+data/.hgignore.i
+data/Properties/Settings.Designer.cs.i
+data/Properties/Settings.settings.i
+data/MySoapExtension.cs.i
+data/AmplitudeEventClasses.cs.i
+data/AmadeusWSExtension.cs.i
