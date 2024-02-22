@@ -40,7 +40,7 @@ namespace Test {
             //am.GetAirportsForChanges("MOW", "OVB", new DateTime(2019, 12, 8), null, 0);
 
             //var f0 = AlexAm.GetDirectFlightsOnDate("ORD", "BOS", new DateTime(2023, 7, 12));
-            var f = am.GetDirectFlightsCryptic("SDU", "CGH", new DateTime(2024, 1, 10));
+            var f = am.GetDirectFlightsCryptic("MSP", "MEM", new DateTime(2024, 2, 20));
             //Console.WriteLine(f);
             /*string acs = "AC-XK-4N-8T-TS-AS-QX-G4-5T-MO-WX-CX-9M-DE-OU-DL-EW-YB-JB-2L-FI-6H-XE-M5-LG-ND-KS-JV-7H-S4-YR-HI-XO-NK-LX-HV-4T-X3-WS-WF-8P";
             string[] arac = acs.Split('-');
