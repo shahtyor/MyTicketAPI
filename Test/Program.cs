@@ -27,8 +27,8 @@ namespace Test {
         {
             DateTime start = DateTime.Now;
             //Console.WriteLine(Convert.ToBase64String(Encoding.UTF8.GetBytes("a0Gk8T1=")));
-            Console.WriteLine(Convert.ToBase64String(Encoding.UTF8.GetBytes("TVL2157")));
-            Console.WriteLine(Convert.ToBase64String(Encoding.ASCII.GetBytes("TVL2157")));
+            //Console.WriteLine(Convert.ToBase64String(Encoding.UTF8.GetBytes("TVL2157")));
+            //Console.WriteLine(Convert.ToBase64String(Encoding.ASCII.GetBytes("TVL2157")));
             //Console.WriteLine(PwdDigest(Convert.FromBase64String("c2VjcmV0bm9uY2UxMDExMQ=="), "2015-09-30T14:12:15Z", Encoding.UTF8.GetBytes("AMADEUS")));
 
 
@@ -40,7 +40,20 @@ namespace Test {
             //am.GetAirportsForChanges("MOW", "OVB", new DateTime(2019, 12, 8), null, 0);
 
             //var f0 = AlexAm.GetDirectFlightsOnDate("ORD", "BOS", new DateTime(2023, 7, 12));
-            var f = am.GetDirectFlightsCryptic("MSP", "MEM", new DateTime(2024, 2, 20));
+            var searchdt = DateTime.Today.AddDays(10);
+
+            Console.Write("1. GetDateTimeInAirport(CDG)" + Environment.NewLine + Environment.NewLine);
+            var t = am.GetDateTimeInAirport("CDG");
+            Console.Write(Newtonsoft.Json.JsonConvert.SerializeObject(t));
+
+            Console.Write(Environment.NewLine + Environment.NewLine + "2. GetAirportsForChanges(NYC, LAX, " + searchdt.ToString() + ", null, 100)" + Environment.NewLine + Environment.NewLine);
+            var p = am.GetAirportsForChanges("NYC", "LAX", searchdt, null, 100);
+            Console.Write(Newtonsoft.Json.JsonConvert.SerializeObject(p));
+
+            Console.Write(Environment.NewLine + Environment.NewLine + "3. GetDirectFlightCryptic(BER, PAR, " + searchdt.ToString() + ")" + Environment.NewLine + Environment.NewLine);
+            var f = am.GetDirectFlightsCryptic("BER", "PAR", DateTime.Today.AddDays(10));
+            Console.Write(Newtonsoft.Json.JsonConvert.SerializeObject(f));
+
             //Console.WriteLine(f);
             /*string acs = "AC-XK-4N-8T-TS-AS-QX-G4-5T-MO-WX-CX-9M-DE-OU-DL-EW-YB-JB-2L-FI-6H-XE-M5-LG-ND-KS-JV-7H-S4-YR-HI-XO-NK-LX-HV-4T-X3-WS-WF-8P";
             string[] arac = acs.Split('-');
