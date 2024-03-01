@@ -25,16 +25,6 @@ namespace SAE.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://nodeD2.production.webservices.amadeus.com/1ASIWTPARUI")]
-        public string SAE_AmadeusPRD_Custom1_PDT_1_0_Services {
-            get {
-                return ((string)(this["SAE_AmadeusPRD_Custom1_PDT_1_0_Services"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("https://nodeD1.production.webservices.amadeus.com/1ASIWS7TS7T")]
         public string SAE_AmadeusPRD_Custom1_PDT_0_0_Services {
             get {
