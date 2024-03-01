@@ -27,25 +27,38 @@ namespace Test {
         {
             DateTime start = DateTime.Now;
             //Console.WriteLine(Convert.ToBase64String(Encoding.UTF8.GetBytes("a0Gk8T1=")));
-            Console.WriteLine(Convert.ToBase64String(Encoding.UTF8.GetBytes("TVL2157")));
-            Console.WriteLine(Convert.ToBase64String(Encoding.ASCII.GetBytes("TVL2157")));
+            //Console.WriteLine(Convert.ToBase64String(Encoding.UTF8.GetBytes("TVL2157")));
+            //Console.WriteLine(Convert.ToBase64String(Encoding.ASCII.GetBytes("TVL2157")));
             //Console.WriteLine(PwdDigest(Convert.FromBase64String("c2VjcmV0bm9uY2UxMDExMQ=="), "2015-09-30T14:12:15Z", Encoding.UTF8.GetBytes("AMADEUS")));
 
 
             //var am = new SAE.Amadeus("WSER1ETM", "TU82dERyIzc=", "KGDR228AQ", "xml", amplitudeApiKey, amplitudeUserId, false);
-            var AlexAmOld = new SAE.Amadeus("WSS7TS7T", "YTBHazhUMT0=", "MOWR228SG", "xml", amplitudeApiKey, amplitudeUserId, false, false, null, null, null);
+            //var AlexAmOld = new SAE.Amadeus("WSS7TS7T", "YTBHazhUMT0=", "MOWR228SG", "xml", amplitudeApiKey, amplitudeUserId, false, false, null, null, null);
             var AlexAm = new SAE.Amadeus("WSGTFSTA", "UGJtc1I9eDdZSGtL", "ALAKZ28HZ", "c:\\xmlcrypt", amplitudeApiKey, amplitudeUserId, true, false, null, null, null);
             //var am = new SAE.Amadeus("WSRUITPA", "NHI/SFJnWDdxWSQj", "ATL1S2157", "xml", amplitudeApiKey, amplitudeUserId, false, true, "http://srv2.globalreservation.com:3128", "staff_airlines", "hZgWt4FrYcnVm9qD");
-            var am = new SAE.Amadeus("WSRUITPA", "NHI/SFJnWDdxWSQj", "ATL1S2484", "xml", amplitudeApiKey, amplitudeUserId, false, false, null, null, null);
+            //var am = new SAE.Amadeus("WSRUITPA", "NHI/SFJnWDdxWSQj", "ATL1S2484", "xml", amplitudeApiKey, amplitudeUserId, false, false, null, null, null);
             //var am = new SAE.Amadeus("WSGTFSTA", "UGJtc1I9eDdZSGtL", "ALAKZ28HZ", "xml", amplitudeApiKey, amplitudeUserId, false, false, null, null, null);
             //am.GetDirectFlightsOnDate("SDU", "CGH", new DateTime(2024, 1, 10));
             //am.GetAirportsForChanges("MOW", "OVB", new DateTime(2019, 12, 8), null, 0);
 
-            var f0 = AlexAm.GetDirectFlightsOnDate("MOW", "OVB", new DateTime(2024, 3, 30));
+            var searchdt = DateTime.Today.AddDays(10);
+
+            Console.Write("1. GetDateTimeInAirport(CDG)" + Environment.NewLine + Environment.NewLine);
+            var t = AlexAm.GetDateTimeInAirport("CDG");
+            Console.Write(Newtonsoft.Json.JsonConvert.SerializeObject(t));
+
+            Console.Write(Environment.NewLine + Environment.NewLine + "2. GetAirportsForChanges(NYC, LAX, " + searchdt.ToString() + ", null, 100)" + Environment.NewLine + Environment.NewLine);
+            var p = AlexAm.GetAirportsForChanges("NYC", "LAX", searchdt, null, 100);
+            Console.Write(Newtonsoft.Json.JsonConvert.SerializeObject(p));
+
+            Console.Write(Environment.NewLine + Environment.NewLine + "3. GetDirectFlightsOnDate(BER, PAR, " + searchdt.ToString() + ")" + Environment.NewLine + Environment.NewLine);
+            var f = AlexAm.GetDirectFlightsOnDate("BER", "PAR", DateTime.Today.AddDays(10));
+            Console.Write(Newtonsoft.Json.JsonConvert.SerializeObject(f));
+
             //var f0 = AlexAm.GetDateTimeInAirport("CDG");
             //var f1 = AlexAm.GetAirportsForChanges("BER", "PAR", new DateTime(2024, 3, 10), null, 100);
             //var f = am.GetDirectFlightsCryptic("BER", "PAR", new DateTime(2024, 3, 10));
-            Console.WriteLine(f0);
+            //Console.WriteLine(f0);
             /*string acs = "AC-XK-4N-8T-TS-AS-QX-G4-5T-MO-WX-CX-9M-DE-OU-DL-EW-YB-JB-2L-FI-6H-XE-M5-LG-ND-KS-JV-7H-S4-YR-HI-XO-NK-LX-HV-4T-X3-WS-WF-8P";
             string[] arac = acs.Split('-');
             var f = am.GetAirportsForChanges("YYC", "PHL", new DateTime(2023, 10, 24), arac, 0);
