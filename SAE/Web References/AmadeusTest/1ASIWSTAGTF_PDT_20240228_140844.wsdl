@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:air_multiavailabilityreply_7_1="http://xml.amadeus.com/SATRSP_07_1_1A" xmlns:command_crypticreply_7_3="http://xml.amadeus.com/HSFRES_07_3_1A" xmlns:amasec="http://xml.amadeus.com/2010/06/Security_v1" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:security_signout_4_1="http://xml.amadeus.com/VLSSOQ_04_1_1A" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:fare_masterpricertravelboardsearch_14_3="http://xml.amadeus.com/FMPTBQ_14_3_1A" xmlns:awsl="http://wsdl.amadeus.com/2010/06/ws/Link_v1" xmlns:air_multiavailability_7_1="http://xml.amadeus.com/SATRQT_07_1_1A" xmlns:awsse="http://xml.amadeus.com/2010/06/Session_v3" xmlns:command_cryptic_7_3="http://xml.amadeus.com/HSFREQ_07_3_1A" xmlns:fare_masterpricertravelboardsearchreply_14_3="http://xml.amadeus.com/FMPTBR_14_3_1A" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:security_signoutreply_4_1="http://xml.amadeus.com/VLSSOR_04_1_1A" xmlns:tns="http://xml.amadeus.com" targetNamespace="http://xml.amadeus.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="MessagingPolicy">
+    <wsam:Addressing wsp:Optional="true">
+      <wsp:Policy>
+        <wsam:AnonymousResponses />
+      </wsp:Policy>
+    </wsam:Addressing>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="AmadeusPolicy">
+    <wsp:PolicyReference URI="#MessagingPolicy" />
+  </wsp:Policy>
+  <wsdl:types>
+    <xs:schema>
+      <xs:import schemaLocation="Air_MultiAvailability_07_1_1A.xsd" namespace="http://xml.amadeus.com/SATRQT_07_1_1A" />
+      <xs:import schemaLocation="Air_MultiAvailabilityReply_07_1_1A.xsd" namespace="http://xml.amadeus.com/SATRSP_07_1_1A" />
+      <xs:import schemaLocation="Command_Cryptic_07_3_1A.xsd" namespace="http://xml.amadeus.com/HSFREQ_07_3_1A" />
+      <xs:import schemaLocation="Command_CrypticReply_07_3_1A.xsd" namespace="http://xml.amadeus.com/HSFRES_07_3_1A" />
+      <xs:import schemaLocation="Fare_MasterPricerTravelBoardSearch_14_3_1A.xsd" namespace="http://xml.amadeus.com/FMPTBQ_14_3_1A" />
+      <xs:import schemaLocation="Fare_MasterPricerTravelBoardSearchReply_14_3_1A.xsd" namespace="http://xml.amadeus.com/FMPTBR_14_3_1A" />
+      <xs:import schemaLocation="Security_SignOut_04_1_1A.xsd" namespace="http://xml.amadeus.com/VLSSOQ_04_1_1A" />
+      <xs:import schemaLocation="Security_SignOutReply_04_1_1A.xsd" namespace="http://xml.amadeus.com/VLSSOR_04_1_1A" />
+      <xs:import schemaLocation="AMA/2012B/AMA_WS_Session.xsd" namespace="http://xml.amadeus.com/2010/06/Session_v3" />
+      <xs:import schemaLocation="AMA_WSLink.xsd" namespace="http://wsdl.amadeus.com/2010/06/ws/Link_v1" />
+      <xs:import schemaLocation="AMA/2012B/AMA_SecurityHostedUser.xsd" namespace="http://xml.amadeus.com/2010/06/Security_v1" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="Session_3.000">
+    <wsdl:part name="session" element="awsse:Session" />
+  </wsdl:message>
+  <wsdl:message name="TransactionFlowLink_1.0">
+    <wsdl:part name="link" element="awsl:TransactionFlowLink" />
+  </wsdl:message>
+  <wsdl:message name="AMA_SecurityHostedUser_1.000">
+    <wsdl:part name="security" element="amasec:AMA_SecurityHostedUser" />
+  </wsdl:message>
+  <wsdl:message name="Air_MultiAvailability_7_1">
+    <wsdl:part name="Air_MultiAvailability_7_1" element="air_multiavailability_7_1:Air_MultiAvailability" />
+  </wsdl:message>
+  <wsdl:message name="Air_MultiAvailabilityReply_7_1">
+    <wsdl:part name="Air_MultiAvailabilityReply_7_1" element="air_multiavailabilityreply_7_1:Air_MultiAvailabilityReply" />
+  </wsdl:message>
+  <wsdl:message name="Command_Cryptic_7_3">
+    <wsdl:part name="Command_Cryptic_7_3" element="command_cryptic_7_3:Command_Cryptic" />
+  </wsdl:message>
+  <wsdl:message name="Command_CrypticReply_7_3">
+    <wsdl:part name="Command_CrypticReply_7_3" element="command_crypticreply_7_3:Command_CrypticReply" />
+  </wsdl:message>
+  <wsdl:message name="Fare_MasterPricerTravelBoardSearch_14_3">
+    <wsdl:part name="Fare_MasterPricerTravelBoardSearch_14_3" element="fare_masterpricertravelboardsearch_14_3:Fare_MasterPricerTravelBoardSearch" />
+  </wsdl:message>
+  <wsdl:message name="Fare_MasterPricerTravelBoardSearchReply_14_3">
+    <wsdl:part name="Fare_MasterPricerTravelBoardSearchReply_14_3" element="fare_masterpricertravelboardsearchreply_14_3:Fare_MasterPricerTravelBoardSearchReply" />
+  </wsdl:message>
+  <wsdl:message name="Security_SignOut_4_1">
+    <wsdl:part name="Security_SignOut_4_1" element="security_signout_4_1:Security_SignOut" />
+  </wsdl:message>
+  <wsdl:message name="Security_SignOutReply_4_1">
+    <wsdl:part name="Security_SignOutReply_4_1" element="security_signoutreply_4_1:Security_SignOutReply" />
+  </wsdl:message>
+  <wsdl:portType name="AmadeusWebServicesPT">
+    <wsdl:operation name="Air_MultiAvailability">
+      <wsdl:input message="tns:Air_MultiAvailability_7_1" />
+      <wsdl:output message="tns:Air_MultiAvailabilityReply_7_1" />
+    </wsdl:operation>
+    <wsdl:operation name="Command_Cryptic">
+      <wsdl:input message="tns:Command_Cryptic_7_3" />
+      <wsdl:output message="tns:Command_CrypticReply_7_3" />
+    </wsdl:operation>
+    <wsdl:operation name="Fare_MasterPricerTravelBoardSearch">
+      <wsdl:input message="tns:Fare_MasterPricerTravelBoardSearch_14_3" />
+      <wsdl:output message="tns:Fare_MasterPricerTravelBoardSearchReply_14_3" />
+    </wsdl:operation>
+    <wsdl:operation name="Security_SignOut">
+      <wsdl:input message="tns:Security_SignOut_4_1" />
+      <wsdl:output message="tns:Security_SignOutReply_4_1" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AmadeusWebServicesBinding" type="tns:AmadeusWebServicesPT">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Air_MultiAvailability">
+      <soap:operation soapAction="http://webservices.amadeus.com/SATRQT_07_1_1A" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:Session_3.000" part="session" use="literal" />
+        <soap:header message="tns:TransactionFlowLink_1.0" part="link" use="literal" />
+        <soap:header message="tns:AMA_SecurityHostedUser_1.000" part="security" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:Session_3.000" part="session" use="literal" />
+        <soap:header message="tns:TransactionFlowLink_1.0" part="link" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Command_Cryptic">
+      <soap:operation soapAction="http://webservices.amadeus.com/HSFREQ_07_3_1A" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:Session_3.000" part="session" use="literal" />
+        <soap:header message="tns:TransactionFlowLink_1.0" part="link" use="literal" />
+        <soap:header message="tns:AMA_SecurityHostedUser_1.000" part="security" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:Session_3.000" part="session" use="literal" />
+        <soap:header message="tns:TransactionFlowLink_1.0" part="link" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Fare_MasterPricerTravelBoardSearch">
+      <soap:operation soapAction="http://webservices.amadeus.com/FMPTBQ_14_3_1A" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:Session_3.000" part="session" use="literal" />
+        <soap:header message="tns:TransactionFlowLink_1.0" part="link" use="literal" />
+        <soap:header message="tns:AMA_SecurityHostedUser_1.000" part="security" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:Session_3.000" part="session" use="literal" />
+        <soap:header message="tns:TransactionFlowLink_1.0" part="link" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Security_SignOut">
+      <soap:operation soapAction="http://webservices.amadeus.com/VLSSOQ_04_1_1A" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:Session_3.000" part="session" use="literal" />
+        <soap:header message="tns:TransactionFlowLink_1.0" part="link" use="literal" />
+        <soap:header message="tns:AMA_SecurityHostedUser_1.000" part="security" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:Session_3.000" part="session" use="literal" />
+        <soap:header message="tns:TransactionFlowLink_1.0" part="link" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AmadeusWebServices">
+    <wsdl:port name="AmadeusWebServicesPort" binding="tns:AmadeusWebServicesBinding">
+      <wsp:PolicyReference URI="#AmadeusPolicy" />
+      <soap:address location="https://nodeD2.test.webservices.amadeus.com/1ASIWSTAGTF" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

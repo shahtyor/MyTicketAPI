@@ -9,7 +9,7 @@ using System.IO;
 
 
 
-namespace SAE.AmadeusPRD {
+namespace SAE.AmadeusTest {
 
   public partial class AmadeusWebServices {
 

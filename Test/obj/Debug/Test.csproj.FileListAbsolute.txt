@@ -47,6 +47,6 @@ F:\SAEwork\TicketAPI\SAE2New\Test\bin\Debug\SAE.pdb
 F:\SAEwork\TicketAPI\SAE2New\Test\bin\Debug\SAE.dll.config
 F:\SAEwork\TicketAPI\SAE2New\Test\obj\Debug\Test.csproj.AssemblyReference.cache
 F:\SAEwork\TicketAPI\SAE2New\Test\obj\Debug\Test.csproj.CoreCompileInputs.cache
-F:\SAEwork\TicketAPI\SAE2New\Test\obj\Debug\Test.csproj.CopyComplete
 F:\SAEwork\TicketAPI\SAE2New\Test\obj\Debug\Test.exe
 F:\SAEwork\TicketAPI\SAE2New\Test\obj\Debug\Test.pdb
+F:\SAEwork\TicketAPI\SAE2New\Test\obj\Debug\Test.csproj.Up2Date

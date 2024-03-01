@@ -5,7 +5,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
-using SAE.AmadeusPRD;
+using SAE.AmadeusTest;
 
 namespace SAE
 {
@@ -76,6 +76,8 @@ namespace SAE
                 am.Url = "https://nodeD1.production.webservices.amadeus.com/1ASIWS7TS7T";
             else if (username == "WSRUITPA")
                 am.Url = "https://noded2.production.webservices.amadeus.com/1ASIWTPARUI";
+            else if (username == "WSGTFSTA")
+                am.Url = "https://nodeD2.test.webservices.amadeus.com/1ASIWSTAGTF";
 
             IWebProxy proxyObject;
             proxyObject = new WebProxy(urlProxy, true);

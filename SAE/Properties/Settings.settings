@@ -8,5 +8,8 @@
     <Setting Name="SAE_AmadeusPRD_Custom1_PDT_0_0_Services" Type="System.String" Scope="Application">
       <Value Profile="(Default)">https://nodeD1.production.webservices.amadeus.com/1ASIWS7TS7T</Value>
     </Setting>
+    <Setting Name="SAE_AmadeusTest_AmadeusWebServices" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://nodeD2.test.webservices.amadeus.com/1ASIWSTAGTF</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

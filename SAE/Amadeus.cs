@@ -11,7 +11,7 @@ using System.IO;
 using System.Net;
 
 
-using SAE.AmadeusPRD;
+using SAE.AmadeusTest;
 using System.Web.Services.Description;
 using System.Globalization;
 using SAE.Properties;
@@ -187,7 +187,7 @@ namespace SAE {
          }
 
          // если перелет с посадками
-         if (f.additionalFlightInfo[0].flightDetails.numberOfStops != "0") {
+         if (f.additionalFlightInfo.flightDetails.numberOfStops != "0") {
            continue;
          }
 
@@ -214,16 +214,16 @@ namespace SAE {
 
            FlightNumber = f.basicFlightInfo.flightIdentification.number,
 
-           Duration = int.Parse(f.additionalFlightInfo[0].flightDetails.legDuration.Substring(0, 2)) * 60 +
-             int.Parse(f.additionalFlightInfo[0].flightDetails.legDuration.Substring(2, 2)),
+           Duration = int.Parse(f.additionalFlightInfo.flightDetails.legDuration.Substring(0, 2)) * 60 +
+             int.Parse(f.additionalFlightInfo.flightDetails.legDuration.Substring(2, 2)),
 
-           Equipment = f.additionalFlightInfo[0].flightDetails.typeOfAircraft,
+           Equipment = f.additionalFlightInfo.flightDetails.typeOfAircraft,
 
-           DepartureTerminal = f.additionalFlightInfo[0].departureStation != null && !String.IsNullOrEmpty(f.additionalFlightInfo[0].departureStation.terminal) ?
-             f.additionalFlightInfo[0].departureStation.terminal : null,
+           DepartureTerminal = f.additionalFlightInfo.departureStation != null && !String.IsNullOrEmpty(f.additionalFlightInfo.departureStation.terminal) ?
+             f.additionalFlightInfo.departureStation.terminal : null,
 
-           ArrivalTerminal = f.additionalFlightInfo[0].arrivalStation != null && !String.IsNullOrEmpty(f.additionalFlightInfo[0].arrivalStation.terminal) ?
-             f.additionalFlightInfo[0].arrivalStation.terminal : null,
+           ArrivalTerminal = f.additionalFlightInfo.arrivalStation != null && !String.IsNullOrEmpty(f.additionalFlightInfo.arrivalStation.terminal) ?
+             f.additionalFlightInfo.arrivalStation.terminal : null,
 
            NumSeatsForBookingClass = bicNum.ToArray(),
          });
@@ -266,7 +266,7 @@ namespace SAE {
                }
              },
              availabilityOptions=new AvailabilityOptionsType() {
-               typeOfRequest="TN",               
+                productTypeDetails=new ProductTypeDetailsType() { typeOfRequest = "TN" },//typeOfRequest="TN",                
              },
     /*        
              availabilityOptions = new AvailabilityOptionsType() {               

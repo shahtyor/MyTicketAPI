@@ -62,6 +62,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
+    <Compile Include="Web References\AmadeusTest\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
@@ -140,6 +145,68 @@
     <None Include="Web References\AmadeusPRD\Security_SignOut_04_1_1A.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Web References\AmadeusTest\1ASIWSTAGTF_PDT_20240228_140844.wsdl" />
+    <None Include="Web References\AmadeusTest\Air_MultiAvailabilityReply.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\AmadeusTest\Air_MultiAvailabilityReply_07_1_1A.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\AmadeusTest\Air_MultiAvailability_07_1_1A.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\AmadeusTest\AMA2011Y.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\AmadeusTest\AMA2012B.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\AmadeusTest\AMA2012B0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\AmadeusTest\AMA2012B1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\AmadeusTest\AMA_WSLink.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\AmadeusTest\Command_CrypticReply.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\AmadeusTest\Command_CrypticReply_07_3_1A.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\AmadeusTest\Command_Cryptic_07_3_1A.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\AmadeusTest\Fare_MasterPricerTravelBoardSearchReply.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\AmadeusTest\Fare_MasterPricerTravelBoardSearchReply_14_3_1A.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\AmadeusTest\Fare_MasterPricerTravelBoardSearch_14_3_1A.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\AmadeusTest\IATA_Proxy.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\AmadeusTest\OTA_Proxy.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\AmadeusTest\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\AmadeusTest\Security_SignOutReply.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\AmadeusTest\Security_SignOutReply_04_1_1A.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\AmadeusTest\Security_SignOut_04_1_1A.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <WebReferenceUrl Include="D:\ProjectsAgenda\Custom1_TST_1.0\Custom1_TST_1.0_Technical.wsdl">
@@ -152,6 +219,17 @@
       </CachedDynamicPropName>
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>SAE_AmadeusPRD_Custom1_PDT_1_0_Services</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="F:\SAEwork\ASIWSTAGTF\1ASIWSTAGTF_PDT_20240228_140844.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\AmadeusTest\</RelPath>
+      <UpdateFromURL>F:\SAEwork\ASIWSTAGTF\1ASIWSTAGTF_PDT_20240228_140844.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>SAE_AmadeusTest_AmadeusWebServices</CachedSettingsPropName>
     </WebReferenceUrl>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
