@@ -33,9 +33,9 @@ namespace Test {
 
 
             //var am = new SAE.Amadeus("WSER1ETM", "TU82dERyIzc=", "KGDR228AQ", "xml", amplitudeApiKey, amplitudeUserId, false);
-            var AlexAmOld = new SAE.Amadeus("WSS7TS7T", "YTBHazhUMT0=", "MOWR228SG", "xml", amplitudeApiKey, amplitudeUserId, false, false, null, null, null);
-            var AlexAm = new SAE.Amadeus("WSGTFSTA", "UGJtc1I9eDdZSGtL", "ALAKZ28HZ", "c:\\xmlcrypt", amplitudeApiKey, amplitudeUserId, true, false, null, null, null);
-            var am = new SAE.Amadeus("WSRUITPA", "NHI/SFJnWDdxWSQj", "ATL1S2157", "xml", amplitudeApiKey, amplitudeUserId, false, true, "http://srv2.globalreservation.com:3128", "staff_airlines", "hZgWt4FrYcnVm9qD");
+            var AlexAmOld = new SAEKZ.Amadeus("WSS7TS7T", "YTBHazhUMT0=", "MOWR228SG", "xml", amplitudeApiKey, amplitudeUserId, false, false, null, null, null);
+            var AlexAm = new SAEKZ.Amadeus("WSGTFSTA", "YXMjSjJrUj9hU2c/", "ALAKZ28HZ", "c:\\xmlcrypt", amplitudeApiKey, amplitudeUserId, true, false, null, null, null);
+            var am = new SAEKZ.Amadeus("WSRUITPA", "NHI/SFJnWDdxWSQj", "ATL1S2157", "xml", amplitudeApiKey, amplitudeUserId, false, true, "http://srv2.globalreservation.com:3128", "staff_airlines", "hZgWt4FrYcnVm9qD");
             //var am = new SAE.Amadeus("WSRUITPA", "NHI/SFJnWDdxWSQj", "ATL1S2484", "xml", amplitudeApiKey, amplitudeUserId, false, false, null, null, null);
             //var am = new SAE.Amadeus("WSGTFSTA", "UGJtc1I9eDdZSGtL", "ALAKZ28HZ", "xml", amplitudeApiKey, amplitudeUserId, false, false, null, null, null);
             //am.GetDirectFlightsOnDate("SDU", "CGH", new DateTime(2024, 1, 10));

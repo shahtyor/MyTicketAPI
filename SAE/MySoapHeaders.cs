@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Serialization;
 
-namespace SAE.MySoapHeaders {
+namespace SAEKZ.MySoapHeaders {
   [Serializable]
   [XmlRoot(Namespace = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd", IsNullable = false, ElementName = "Security")]
   public partial class WSSecurity : System.Web.Services.Protocols.SoapHeader {

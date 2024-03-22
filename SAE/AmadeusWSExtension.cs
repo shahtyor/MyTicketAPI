@@ -9,7 +9,7 @@ using System.IO;
 
 
 
-namespace SAE.AmadeusTest {
+namespace SAEKZ.AmadeusTest {
 
   public partial class AmadeusWebServices {
 
@@ -22,8 +22,8 @@ namespace SAE.AmadeusTest {
           if (mySoapHeaders[i] == null) {
             continue;
           }
-          if (mySoapHeaders[i] is SAE.MySoapHeaders.Action) {
-            ((SAE.MySoapHeaders.Action)mySoapHeaders[i]).Value = message.Action;
+          if (mySoapHeaders[i] is SAEKZ.MySoapHeaders.Action) {
+            ((SAEKZ.MySoapHeaders.Action)mySoapHeaders[i]).Value = message.Action;
           }
           message.Headers.Add(mySoapHeaders[i]);
         }

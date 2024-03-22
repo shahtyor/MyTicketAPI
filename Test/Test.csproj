@@ -57,9 +57,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SAE\SAE.csproj">
+    <ProjectReference Include="..\SAE\SAEKZ.csproj">
       <Project>{2eb05fd2-01dd-4b91-bde9-2eb1c77b5005}</Project>
-      <Name>SAE</Name>
+      <Name>SAEKZ</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

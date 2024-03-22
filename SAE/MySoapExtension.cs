@@ -6,7 +6,7 @@ using System.IO;
 using System.Web.Services.Protocols;
 using System.Xml;
 
-namespace SAE {
+namespace SAEKZ {
   public class TraceExtension : SoapExtension {
     Stream oldStream;
     Stream newStream;
