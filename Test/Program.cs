@@ -44,19 +44,19 @@ namespace Test {
             var searchdt = DateTime.Today.AddDays(10);
 
             Console.Write("1. GetDateTimeInAirport(CDG)" + Environment.NewLine + Environment.NewLine);
-            var t = am.GetDateTimeInAirport("CDG");
+            var t = AlexAm.GetDateTimeInAirport("CDG");
             Console.Write(Newtonsoft.Json.JsonConvert.SerializeObject(t));
 
             Console.Write(Environment.NewLine + Environment.NewLine + "2. GetAirportsForChanges(NYC, LAX, " + searchdt.ToString() + ", null, 100)" + Environment.NewLine + Environment.NewLine);
-            var p = am.GetAirportsForChanges("NYC", "LAX", searchdt, null, 100);
+            var p = AlexAm.GetAirportsForChanges("NYC", "LAX", searchdt, null, 100);
             Console.Write(Newtonsoft.Json.JsonConvert.SerializeObject(p));
 
             Console.Write(Environment.NewLine + Environment.NewLine + "3. GetDirectFlightsCryptic(BER, PAR, " + searchdt.ToString() + ")" + Environment.NewLine + Environment.NewLine);
-            var f = am.GetDirectFlightsCryptic("BER", "PAR", DateTime.Today.AddDays(10));
+            var f = AlexAm.GetDirectFlightsCryptic("BER", "PAR", DateTime.Today.AddDays(10));
             Console.Write(Newtonsoft.Json.JsonConvert.SerializeObject(f));
 
             Console.Write(Environment.NewLine + Environment.NewLine + "4. GetDirectFlightsOnDate(BER, PAR, " + searchdt.ToString() + ")" + Environment.NewLine + Environment.NewLine);
-            var f2 = am.GetDirectFlightsOnDate("BER", "PAR", DateTime.Today.AddDays(10));
+            var f2 = AlexAm.GetDirectFlightsOnDate("BER", "PAR", DateTime.Today.AddDays(10));
             Console.Write(Newtonsoft.Json.JsonConvert.SerializeObject(f2));
 
             //Console.WriteLine(f);

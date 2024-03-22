@@ -571,8 +571,8 @@ namespace SAE {
                         f.ArrivalTerminal = portterminal.Substring(9, 2).Trim();
 
                         var times = firstString.Substring(47, 15);
-                        var t1 = times.Substring(0, 5);
-                        var t2 = times.Substring(8);
+                        var t1 = times.Substring(1, 5);
+                        var t2 = times.Substring(9);
 
                         var midday1 = t1.Substring(4, 1);
                         var midday2 = t2.Substring(4, 1);
