@@ -11,12 +11,12 @@ using System.IO;
 using System.Net;
 
 
-using SAE.AmadeusTest;
+using SAEKZ.AmadeusTest;
 using System.Web.Services.Description;
 using System.Globalization;
-using SAE.Properties;
+using SAEKZ.Properties;
 
-namespace SAE {
+namespace SAEKZ {
   public class Amadeus : AmadeusSOAP {
     private const int numConnPoints = 1; // количество пересадок (для GetAirportsForChanges)
 

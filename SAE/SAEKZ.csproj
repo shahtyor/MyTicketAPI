@@ -7,8 +7,8 @@
     <ProjectGuid>{2EB05FD2-01DD-4B91-BDE9-2EB1C77B5005}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SAE</RootNamespace>
-    <AssemblyName>SAE</AssemblyName>
+    <RootNamespace>SAEKZ</RootNamespace>
+    <AssemblyName>SAEKZ</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -78,7 +78,7 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <None Include="Web References\AmadeusTest\1ASIWSTAGTF_PDT_20240228_140844.wsdl" />
-    <None Include="Web References\AmadeusTest\Air_MultiAvailabilityReply.datasource">
+    <None Include="Web References\AmadeusTest\Air_MultiAvailabilityReply1.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
     <None Include="Web References\AmadeusTest\Air_MultiAvailabilityReply_07_1_1A.xsd">
@@ -102,7 +102,7 @@
     <None Include="Web References\AmadeusTest\AMA_WSLink.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Web References\AmadeusTest\Command_CrypticReply.datasource">
+    <None Include="Web References\AmadeusTest\Command_CrypticReply1.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
     <None Include="Web References\AmadeusTest\Command_CrypticReply_07_3_1A.xsd">
@@ -111,7 +111,7 @@
     <None Include="Web References\AmadeusTest\Command_Cryptic_07_3_1A.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Web References\AmadeusTest\Fare_MasterPricerTravelBoardSearchReply.datasource">
+    <None Include="Web References\AmadeusTest\Fare_MasterPricerTravelBoardSearchReply1.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
     <None Include="Web References\AmadeusTest\Fare_MasterPricerTravelBoardSearchReply_14_3_1A.xsd">
@@ -130,7 +130,7 @@
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Web References\AmadeusTest\Security_SignOutReply.datasource">
+    <None Include="Web References\AmadeusTest\Security_SignOutReply1.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
     <None Include="Web References\AmadeusTest\Security_SignOutReply_04_1_1A.xsd">

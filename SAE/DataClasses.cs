@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Xml.Serialization;
 
 
-namespace SAE {
+namespace SAEKZ {
   [Serializable]
   public class Flight {
     /// <summary>

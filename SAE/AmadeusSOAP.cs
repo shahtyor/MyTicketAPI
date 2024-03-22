@@ -5,9 +5,9 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
-using SAE.AmadeusTest;
+using SAEKZ.AmadeusTest;
 
-namespace SAE
+namespace SAEKZ
 {
     public class AmadeusSOAP
     {
@@ -42,10 +42,10 @@ namespace SAE
         protected void SetSoapHeaders(AmadeusWebServices am, bool sessionStart)
         {
             am.mySoapHeaders = new System.Web.Services.Protocols.SoapHeader[] {
-          sessionStart? SAE.MySoapHeaders.WSSecurity.CreateForAmadeus(username, Convert.FromBase64String(passwordBase64)):null,
-          new SAE.MySoapHeaders.MessageID(){ Value="urn:uuid:" + Guid.NewGuid().ToString()},
-          new SAE.MySoapHeaders.To(){Value=am.Url},
-          new SAE.MySoapHeaders.Action()
+          sessionStart? SAEKZ.MySoapHeaders.WSSecurity.CreateForAmadeus(username, Convert.FromBase64String(passwordBase64)):null,
+          new SAEKZ.MySoapHeaders.MessageID(){ Value="urn:uuid:" + Guid.NewGuid().ToString()},
+          new SAEKZ.MySoapHeaders.To(){Value=am.Url},
+          new SAEKZ.MySoapHeaders.Action()
             };
             if (sessionStart)
             {
@@ -77,7 +77,7 @@ namespace SAE
             else if (username == "WSRUITPA")
                 am.Url = "https://noded2.production.webservices.amadeus.com/1ASIWTPARUI";
             else if (username == "WSGTFSTA")
-                am.Url = "https://nodeD2.test.webservices.amadeus.com/1ASIWSTAGTF";
+                am.Url = "https://nodeD2.production.webservices.amadeus.com/1ASIWSTAGTF";
 
             IWebProxy proxyObject;
             proxyObject = new WebProxy(urlProxy, true);

@@ -33,9 +33,9 @@ namespace Test {
 
 
             //var am = new SAE.Amadeus("WSER1ETM", "TU82dERyIzc=", "KGDR228AQ", "xml", amplitudeApiKey, amplitudeUserId, false);
-            var AlexAmOld = new SAE.Amadeus("WSS7TS7T", "YTBHazhUMT0=", "MOWR228SG", "xml", amplitudeApiKey, amplitudeUserId, false, false, null, null, null);
-            var AlexAm = new SAE.Amadeus("WSGTFSTA", "UGJtc1I9eDdZSGtL", "ALAKZ28HZ", "c:\\xmlcrypt", amplitudeApiKey, amplitudeUserId, true, false, null, null, null);
-            var am = new SAE.Amadeus("WSRUITPA", "NHI/SFJnWDdxWSQj", "ATL1S2157", "xml", amplitudeApiKey, amplitudeUserId, false, true, "http://srv2.globalreservation.com:3128", "staff_airlines", "hZgWt4FrYcnVm9qD");
+            var amRU = new SAEKZ.Amadeus("WSS7TS7T", "YTBHazhUMT0=", "MOWR228SG", "xml", amplitudeApiKey, amplitudeUserId, false, false, null, null, null);
+            var amKZ = new SAEKZ.Amadeus("WSGTFSTA", "YXMjSjJrUj9hU2c/", "ALAKZ28HZ", "c:\\xmlcrypt", amplitudeApiKey, amplitudeUserId, true, false, null, null, null);
+            var amUS = new SAEKZ.Amadeus("WSRUITPA", "NHI/SFJnWDdxWSQj", "ATL1S2157", "xml", amplitudeApiKey, amplitudeUserId, false, true, "http://srv2.globalreservation.com:3128", "staff_airlines", "hZgWt4FrYcnVm9qD");
             //var am = new SAE.Amadeus("WSRUITPA", "NHI/SFJnWDdxWSQj", "ATL1S2484", "xml", amplitudeApiKey, amplitudeUserId, false, false, null, null, null);
             //var am = new SAE.Amadeus("WSGTFSTA", "UGJtc1I9eDdZSGtL", "ALAKZ28HZ", "xml", amplitudeApiKey, amplitudeUserId, false, false, null, null, null);
             //am.GetDirectFlightsOnDate("SDU", "CGH", new DateTime(2024, 1, 10));
@@ -49,7 +49,7 @@ namespace Test {
             Console.Write("1. GetDateTimeInAirport(CDG)" + Environment.NewLine + Environment.NewLine);
             try
             {
-                var t = AlexAmOld.GetDateTimeInAirport("CDG");
+                var t = amRU.GetDateTimeInAirport("CDG");
                 Console.Write(Newtonsoft.Json.JsonConvert.SerializeObject(t));
             }
             catch (Exception ex)
@@ -60,7 +60,7 @@ namespace Test {
             Console.Write(Environment.NewLine + Environment.NewLine + "2. GetAirportsForChanges(NYC, LAX, " + searchdt.ToString() + ", null, 100)" + Environment.NewLine + Environment.NewLine);
             try
             {
-                var p = AlexAmOld.GetAirportsForChanges("NYC", "LAX", searchdt, null, 100);
+                var p = amRU.GetAirportsForChanges("NYC", "LAX", searchdt, null, 100);
                 Console.Write(Newtonsoft.Json.JsonConvert.SerializeObject(p));
             }
             catch (Exception ex)
@@ -71,7 +71,7 @@ namespace Test {
             Console.Write(Environment.NewLine + Environment.NewLine + "3. GetDirectFlightsOnDate(BER, PAR, " + searchdt.ToString() + ")" + Environment.NewLine + Environment.NewLine);
             try
             {
-                var f = AlexAmOld.GetDirectFlightsOnDate("BER", "PAR", DateTime.Today.AddDays(10));
+                var f = amRU.GetDirectFlightsOnDate("BER", "PAR", DateTime.Today.AddDays(10));
                 Console.Write(Newtonsoft.Json.JsonConvert.SerializeObject(f));
             }
             catch (Exception ex)
@@ -82,7 +82,7 @@ namespace Test {
             Console.Write(Environment.NewLine + Environment.NewLine + "4. GetDirectFlightsCryptic(BER, PAR, " + searchdt.ToString() + ")" + Environment.NewLine + Environment.NewLine);
             try
             {
-                var s = AlexAmOld.GetDirectFlightsCryptic("LON", "MAD", DateTime.Today.AddDays(10));
+                var s = amRU.GetDirectFlightsCryptic("LON", "MAD", DateTime.Today.AddDays(10));
                 Console.Write(Newtonsoft.Json.JsonConvert.SerializeObject(s));
             }
             catch (Exception ex)
@@ -98,7 +98,7 @@ namespace Test {
             Console.Write("1. GetDateTimeInAirport(CDG)" + Environment.NewLine + Environment.NewLine);
             try
             {
-                var t = am.GetDateTimeInAirport("CDG");
+                var t = amUS.GetDateTimeInAirport("CDG");
                 Console.Write(Newtonsoft.Json.JsonConvert.SerializeObject(t));
             }
             catch (Exception ex)
@@ -109,7 +109,7 @@ namespace Test {
             Console.Write(Environment.NewLine + Environment.NewLine + "2. GetAirportsForChanges(NYC, LAX, " + searchdt.ToString() + ", null, 100)" + Environment.NewLine + Environment.NewLine);
             try
             {
-                var p = am.GetAirportsForChanges("NYC", "LAX", searchdt, null, 100);
+                var p = amUS.GetAirportsForChanges("NYC", "LAX", searchdt, null, 100);
                 Console.Write(Newtonsoft.Json.JsonConvert.SerializeObject(p));
             }
             catch (Exception ex)
@@ -120,7 +120,7 @@ namespace Test {
             Console.Write(Environment.NewLine + Environment.NewLine + "3. GetDirectFlightsOnDate(BER, PAR, " + searchdt.ToString() + ")" + Environment.NewLine + Environment.NewLine);
             try
             {
-                var f = am.GetDirectFlightsOnDate("BER", "PAR", DateTime.Today.AddDays(10));
+                var f = amUS.GetDirectFlightsOnDate("BER", "PAR", DateTime.Today.AddDays(10));
                 Console.Write(Newtonsoft.Json.JsonConvert.SerializeObject(f));
             }
             catch (Exception ex)
@@ -131,7 +131,7 @@ namespace Test {
             Console.Write(Environment.NewLine + Environment.NewLine + "4. GetDirectFlightsCryptic(BER, PAR, " + searchdt.ToString() + ")" + Environment.NewLine + Environment.NewLine);
             try
             {
-                var s = am.GetDirectFlightsCryptic("LON", "MAD", DateTime.Today.AddDays(10));
+                var s = amUS.GetDirectFlightsCryptic("LON", "MAD", DateTime.Today.AddDays(10));
                 Console.Write(Newtonsoft.Json.JsonConvert.SerializeObject(s));
             }
             catch (Exception ex)
@@ -147,7 +147,7 @@ namespace Test {
             Console.Write("1. GetDateTimeInAirport(CDG)" + Environment.NewLine + Environment.NewLine);
             try
             {
-                var t = AlexAm.GetDateTimeInAirport("CDG");
+                var t = amKZ.GetDateTimeInAirport("CDG");
                 Console.Write(Newtonsoft.Json.JsonConvert.SerializeObject(t));
             }
             catch (Exception ex)
@@ -158,7 +158,7 @@ namespace Test {
             Console.Write(Environment.NewLine + Environment.NewLine + "2. GetAirportsForChanges(NYC, LAX, " + searchdt.ToString() + ", null, 100)" + Environment.NewLine + Environment.NewLine);
             try
             {
-                var p = AlexAm.GetAirportsForChanges("NYC", "LAX", searchdt, null, 100);
+                var p = amKZ.GetAirportsForChanges("NYC", "LAX", searchdt, null, 100);
                 Console.Write(Newtonsoft.Json.JsonConvert.SerializeObject(p));
             }
             catch (Exception ex)
@@ -169,7 +169,7 @@ namespace Test {
             Console.Write(Environment.NewLine + Environment.NewLine + "3. GetDirectFlightsOnDate(BER, PAR, " + searchdt.ToString() + ")" + Environment.NewLine + Environment.NewLine);
             try
             {
-                var f = AlexAm.GetDirectFlightsOnDate("BER", "PAR", DateTime.Today.AddDays(10));
+                var f = amKZ.GetDirectFlightsOnDate("BER", "PAR", DateTime.Today.AddDays(10));
                 Console.Write(Newtonsoft.Json.JsonConvert.SerializeObject(f));
             }
             catch (Exception ex) 
@@ -180,7 +180,7 @@ namespace Test {
             Console.Write(Environment.NewLine + Environment.NewLine + "4. GetDirectFlightsCryptic(BER, PAR, " + searchdt.ToString() + ")" + Environment.NewLine + Environment.NewLine);
             try
             {
-                var s = AlexAm.GetDirectFlightsCryptic("LON", "MAD", DateTime.Today.AddDays(10));
+                var s = amKZ.GetDirectFlightsCryptic("LON", "MAD", DateTime.Today.AddDays(10));
                 Console.Write(Newtonsoft.Json.JsonConvert.SerializeObject(s));
             }
             catch (Exception ex) 
