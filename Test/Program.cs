@@ -33,31 +33,160 @@ namespace Test {
 
 
             //var am = new SAE.Amadeus("WSER1ETM", "TU82dERyIzc=", "KGDR228AQ", "xml", amplitudeApiKey, amplitudeUserId, false);
-            var AlexAm = new SAE.Amadeus("WSS7TS7T", "YTBHazhUMT0=", "MOWR228SG", "xml", amplitudeApiKey, amplitudeUserId, false, false, null, null, null);
-            //var am = new SAE.Amadeus("WSRUITPA", "NHI/SFJnWDdxWSQj", "ATL1S2157", "xml", amplitudeApiKey, amplitudeUserId, false, true, "http://srv2.globalreservation.com:3128", "staff_airlines", "hZgWt4FrYcnVm9qD");
-            //var am = new SAE.Amadeus("WSRUITPA", "NHI/SFJnWDdxWSQj", "ATL1S2484", "xml", amplitudeApiKey, amplitudeUserId, false, false, null, null, null);
-            var am = new SAE.Amadeus("WSGTFSTA", "YXMjSjJrUj9hU2c/", "ALAKZ28HZ", "xml", amplitudeApiKey, amplitudeUserId, false, false, null, null, null);
+            var amRU = new SAE.Amadeus("WSS7TS7T", "YTBHazhUMT0=", "MOWR228SG", "xml", amplitudeApiKey, amplitudeUserId, false, false, null, null, null);
+            //var amUS = new SAE.Amadeus("WSRUITPA", "NHI/SFJnWDdxWSQj", "ATL1S2157", "xml", amplitudeApiKey, amplitudeUserId, false, true, "http://srv2.globalreservation.com:3128", "staff_airlines", "hZgWt4FrYcnVm9qD");
+            var amUS = new SAE.Amadeus("WSRUITPA", "NHI/SFJnWDdxWSQj", "ATL1S2484", "xml", amplitudeApiKey, amplitudeUserId, false, true, "http://srv2.globalreservation.com:3128", "staff_airlines", "hZgWt4FrYcnVm9qD");
+            var amKZ = new SAE.Amadeus("WSGTFSTA", "YXMjSjJrUj9hU2c/", "ALAKZ28HZ", "xml", amplitudeApiKey, amplitudeUserId, false, false, null, null, null);
             //am.GetDirectFlightsOnDate("SDU", "CGH", new DateTime(2024, 1, 10));
             //am.GetAirportsForChanges("MOW", "OVB", new DateTime(2019, 12, 8), null, 0);
 
             //var f0 = AlexAm.GetDirectFlightsOnDate("ORD", "BOS", new DateTime(2023, 7, 12));
             var searchdt = DateTime.Today.AddDays(10);
 
+            /*Console.WriteLine("WSS7TS7T/MOWR228SG");
+            Console.WriteLine();
+
             Console.Write("1. GetDateTimeInAirport(CDG)" + Environment.NewLine + Environment.NewLine);
-            var t = am.GetDateTimeInAirport("CDG");
-            Console.Write(Newtonsoft.Json.JsonConvert.SerializeObject(t));
+            try
+            {
+                var t = amRU.GetDateTimeInAirport("CDG");
+                Console.Write(Newtonsoft.Json.JsonConvert.SerializeObject(t));
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message + "..." + ex.StackTrace);
+            }
 
             Console.Write(Environment.NewLine + Environment.NewLine + "2. GetAirportsForChanges(NYC, LAX, " + searchdt.ToString() + ", null, 100)" + Environment.NewLine + Environment.NewLine);
-            var p = am.GetAirportsForChanges("NYC", "LAX", searchdt, null, 100);
-            Console.Write(Newtonsoft.Json.JsonConvert.SerializeObject(p));
+            try
+            {
+                var p = amRU.GetAirportsForChanges("NYC", "LAX", searchdt, null, 100);
+                Console.Write(Newtonsoft.Json.JsonConvert.SerializeObject(p));
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message + "..." + ex.StackTrace);
+            }
 
-            Console.Write(Environment.NewLine + Environment.NewLine + "3. GetDirectFlightsCryptic(BER, PAR, " + searchdt.ToString() + ")" + Environment.NewLine + Environment.NewLine);
-            var f = am.GetDirectFlightsCryptic("BER", "PAR", DateTime.Today.AddDays(10));
-            Console.Write(Newtonsoft.Json.JsonConvert.SerializeObject(f));
+            Console.Write(Environment.NewLine + Environment.NewLine + "3. GetDirectFlightsOnDate(BER, PAR, " + searchdt.ToString() + ")" + Environment.NewLine + Environment.NewLine);
+            try
+            {
+                var f = amRU.GetDirectFlightsOnDate("BER", "PAR", DateTime.Today.AddDays(10));
+                Console.Write(Newtonsoft.Json.JsonConvert.SerializeObject(f));
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message + "..." + ex.StackTrace);
+            }
 
-            Console.Write(Environment.NewLine + Environment.NewLine + "4. GetDirectFlightsOnDate(BER, PAR, " + searchdt.ToString() + ")" + Environment.NewLine + Environment.NewLine);
-            var f2 = am.GetDirectFlightsOnDate("BER", "PAR", DateTime.Today.AddDays(10));
-            Console.Write(Newtonsoft.Json.JsonConvert.SerializeObject(f2));
+            Console.Write(Environment.NewLine + Environment.NewLine + "4. GetDirectFlightsCryptic(BER, PAR, " + searchdt.ToString() + ")" + Environment.NewLine + Environment.NewLine);
+            try
+            {
+                var s = amRU.GetDirectFlightsCryptic("LON", "MAD", DateTime.Today.AddDays(10));
+                Console.Write(Newtonsoft.Json.JsonConvert.SerializeObject(s));
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message + "..." + ex.StackTrace);
+            }*/
+
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine("WSRUITPA/ATL1S2157");
+            Console.WriteLine();
+
+            /*Console.Write("1. GetDateTimeInAirport(CDG)" + Environment.NewLine + Environment.NewLine);
+            try
+            {
+                var t = amUS.GetDateTimeInAirport("CDG");
+                Console.Write(Newtonsoft.Json.JsonConvert.SerializeObject(t));
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message + "..." + ex.StackTrace);
+            }
+
+            Console.Write(Environment.NewLine + Environment.NewLine + "2. GetAirportsForChanges(NYC, LAX, " + searchdt.ToString() + ", null, 100)" + Environment.NewLine + Environment.NewLine);
+            try
+            {
+                var p = amUS.GetAirportsForChanges("NYC", "LAX", searchdt, null, 100);
+                Console.Write(Newtonsoft.Json.JsonConvert.SerializeObject(p));
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message + "..." + ex.StackTrace);
+            }
+
+            Console.Write(Environment.NewLine + Environment.NewLine + "3. GetDirectFlightsOnDate(BER, PAR, " + searchdt.ToString() + ")" + Environment.NewLine + Environment.NewLine);
+            try
+            {
+                var f = amUS.GetDirectFlightsOnDate("BER", "PAR", DateTime.Today.AddDays(10));
+                Console.Write(Newtonsoft.Json.JsonConvert.SerializeObject(f));
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message + "..." + ex.StackTrace);
+            }*/
+
+            Console.Write(Environment.NewLine + Environment.NewLine + "4. GetDirectFlightsCryptic(BER, PAR, " + searchdt.ToString() + ")" + Environment.NewLine + Environment.NewLine);
+            try
+            {
+                var s = amUS.GetDirectFlightsCryptic("LON", "MAD", DateTime.Today.AddDays(10));
+                Console.Write(Newtonsoft.Json.JsonConvert.SerializeObject(s));
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message + "..." + ex.StackTrace);
+            }
+
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine("WSGTFSTA/ALAKZ28HZ");
+            Console.WriteLine();
+
+            Console.Write("1. GetDateTimeInAirport(CDG)" + Environment.NewLine + Environment.NewLine);
+            try
+            {
+                var t = amKZ.GetDateTimeInAirport("CDG");
+                Console.Write(Newtonsoft.Json.JsonConvert.SerializeObject(t));
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message + "..." + ex.StackTrace);
+            }
+
+            Console.Write(Environment.NewLine + Environment.NewLine + "2. GetAirportsForChanges(NYC, LAX, " + searchdt.ToString() + ", null, 100)" + Environment.NewLine + Environment.NewLine);
+            try
+            {
+                var p = amKZ.GetAirportsForChanges("NYC", "LAX", searchdt, null, 100);
+                Console.Write(Newtonsoft.Json.JsonConvert.SerializeObject(p));
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message + "..." + ex.StackTrace);
+            }
+
+            Console.Write(Environment.NewLine + Environment.NewLine + "3. GetDirectFlightsOnDate(BER, PAR, " + searchdt.ToString() + ")" + Environment.NewLine + Environment.NewLine);
+            try
+            {
+                var f = amKZ.GetDirectFlightsOnDate("BER", "PAR", DateTime.Today.AddDays(10));
+                Console.Write(Newtonsoft.Json.JsonConvert.SerializeObject(f));
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message + "..." + ex.StackTrace);
+            }
+
+            Console.Write(Environment.NewLine + Environment.NewLine + "4. GetDirectFlightsCryptic(BER, PAR, " + searchdt.ToString() + ")" + Environment.NewLine + Environment.NewLine);
+            try
+            {
+                var s = amKZ.GetDirectFlightsCryptic("LON", "MAD", DateTime.Today.AddDays(10));
+                Console.Write(Newtonsoft.Json.JsonConvert.SerializeObject(s));
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message + "..." + ex.StackTrace);
+            }
 
             //Console.WriteLine(f);
             /*string acs = "AC-XK-4N-8T-TS-AS-QX-G4-5T-MO-WX-CX-9M-DE-OU-DL-EW-YB-JB-2L-FI-6H-XE-M5-LG-ND-KS-JV-7H-S4-YR-HI-XO-NK-LX-HV-4T-X3-WS-WF-8P";
