@@ -96,9 +96,9 @@ namespace SAEKZ {
          listDbgE.MoveNext();
          DeserializeXml(out amavRsp, listDbgE.Current);
  #else
-         Air_MultiAvailabilityReply amavRsp = am.Air_MultiAvailability(amavReq);        
+         Air_MultiAvailabilityReply amavRsp = am.Air_MultiAvailability(amavReq);       
  #endif
-         SerializeXml(amavRsp, subdir, "air_multiavail_rsp", fc);
+         SerializeXml(amavRsp, subdir, "air_multiavail_rsp", am.SessionValue, fc);
        
          while (AddDirectFlightsOnDate(resultFlights, amavRsp, departureDate)) {
            if (numScrolls == 30) {
@@ -113,7 +113,7 @@ namespace SAEKZ {
            IncrementSession(am, false);
            amavRsp = am.Air_MultiAvailability(NextScheduleReq());          
  #endif
-           SerializeXml(amavRsp, subdir, numScrolls + "_air_multiavail_scroll_rsp", fc);
+           SerializeXml(amavRsp, subdir, numScrolls + "_air_multiavail_scroll_rsp", am.SessionValue, fc);
          }
          
  #if !__dbg
@@ -121,7 +121,7 @@ namespace SAEKZ {
  #endif
        }
 
-       SerializeXml(resultFlights, subdir, "result", fc);
+       SerializeXml(resultFlights, subdir, "result", null, fc);
 
  #if !__dbg      
        if (!String.IsNullOrEmpty(amplitudeApiKey) && !String.IsNullOrEmpty(amplitudeUserId)) {
@@ -310,7 +310,7 @@ namespace SAEKZ {
             using (var am = CreateAWS(null, true))
             {
                 var rsp = am.Fare_MasterPricerTravelBoardSearch(req);
-                SerializeXml(rsp, subdir, "master_pricer_rsp", fc);
+                SerializeXml(rsp, subdir, "master_pricer_rsp", am.SessionValue, fc);
 
                 if (rsp.errorMessage != null)
                 {
@@ -390,7 +390,7 @@ namespace SAEKZ {
                 Destinations = destinations.ToArray(),
             };
 
-            SerializeXml(result, subdir, "result", fc);
+            SerializeXml(result, subdir, "result", null, fc);
 
             if (!String.IsNullOrEmpty(amplitudeApiKey) && !String.IsNullOrEmpty(amplitudeUserId))
             {
@@ -465,7 +465,7 @@ namespace SAEKZ {
                 int cntflight = flights.Length;
 
                 int fc = SerializeXml(req, subdir, "command_cryptic_req");
-                SerializeXml(rsp, subdir, "command_cryptic_rsp", fc);
+                SerializeXml(rsp, subdir, "command_cryptic_rsp", am.SessionValue, fc);
 
                 while (cntflight >= 9)
                 {
@@ -477,7 +477,7 @@ namespace SAEKZ {
                     cntflight = flights.Length;
                     numScrolls++;
 
-                    SerializeXml(rsp2, subdir, "command_cryptic_rsp", fc);
+                    SerializeXml(rsp2, subdir, "command_cryptic_rsp", am.SessionValue, fc);
                 }
 
                 IncrementSession(am, true);
@@ -691,7 +691,7 @@ namespace SAEKZ {
       DateTime result;
       using (var am = CreateAWS(null, true)) {
         var rsp = am.Command_Cryptic(req);
-        SerializeXml(rsp, subdir, "command_cryptic_rsp", fc);
+        SerializeXml(rsp, subdir, "command_cryptic_rsp", am.SessionValue, fc);
 
         Match m;
         if (rsp.longTextString == null || rsp.longTextString.textStringDetails == null ||

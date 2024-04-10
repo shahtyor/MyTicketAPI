@@ -43,7 +43,7 @@ namespace Test {
 
             var searchdt = DateTime.Today.AddDays(10);
 
-            Console.WriteLine("WSS7TS7T/MOWR228SG");
+            /*Console.WriteLine("WSS7TS7T/MOWR228SG");
             Console.WriteLine();
 
             Console.Write("1. GetDateTimeInAirport(CDG)" + Environment.NewLine + Environment.NewLine);
@@ -137,7 +137,7 @@ namespace Test {
             catch (Exception ex)
             {
                 Console.Write(ex.Message + "..." + ex.StackTrace);
-            }
+            }*/
 
             Console.WriteLine();
             Console.WriteLine();

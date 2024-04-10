@@ -129,7 +129,7 @@ namespace SAEKZ
             //SerializeXml(soRsp, subDir, "signout", fc);
         }
 
-        protected int SerializeXml(object o, string subDir, string fileName, int? fc = null)
+        protected int SerializeXml(object o, string subDir, string fileName, Session sess = null, int? fc = null)
         {
             string[] dirParts;
             if (subDir == ".")
@@ -150,8 +150,14 @@ namespace SAEKZ
 
             if (logXml)
             {
+                string sid = "sid";
+                if (sess != null)
+                {
+                    sid = sess.SessionId;
+                }
+
                 var srl = new System.Xml.Serialization.XmlSerializer(o.GetType());
-                using (var sw = new System.IO.StreamWriter(System.IO.Path.Combine(subDir, fileName + "_" +
+                using (var sw = new System.IO.StreamWriter(System.IO.Path.Combine(subDir, fileName + "_" + sid + "_" +
                   DateTime.Now.ToString("yyyyMMdd_HHmmss_fff") + "_" + _fc + ".xml")))
                 {
                     srl.Serialize(sw, o);
