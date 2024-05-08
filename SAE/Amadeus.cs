@@ -528,7 +528,11 @@ namespace SAE {
                 listFlight.RemoveAt(i);
             }
 
+            List<Flight> suspectList = new List<Flight>();
+
             bool RealyAddFlight = false;
+            bool suspect = false;
+
             foreach (string firstString in listFlight)
             {
                 if (!string.IsNullOrEmpty(firstString.Trim()))
@@ -544,11 +548,16 @@ namespace SAE {
 
                         var aknum = firstString.Substring(2, 9);
                         var operate = aknum.Substring(0, 2).Trim();
+                        var symsuspect = aknum.Substring(2, 1);
                         var market = aknum.Substring(3, 2).Trim();
                         var num = aknum.Substring(5, 4).Trim();
                         if (string.IsNullOrEmpty(operate))
                         {
                             operate = market;
+                            if (symsuspect == ":")
+                            {
+                                suspect = true;
+                            }
                         }
 
                         f.MarketingCarrier = market;
@@ -611,22 +620,49 @@ namespace SAE {
 
                         if (!fltCancelled)
                         {
-                            resultFlights.Add(f);
+                            if (suspect)
+                            {
+                                suspectList.Add(f);
+                            }
+                            else
+                            {
+                                resultFlights.Add(f);
+                            }
                             RealyAddFlight = true;
                         }
                     }
                     else
                     {
-                        if (resultFlights.Count > 0 && RealyAddFlight)
+                        if (RealyAddFlight)
                         {
-                            Flight last = resultFlights.Last();
+                            Flight last = null;
+                            if (!suspect && resultFlights.Count > 0)
+                            {
+                                last = resultFlights.Last();
+                            }
+                            else if (suspect && suspectList.Count > 0)
+                            {
+                                last = suspectList.Last();
+                            }
                             List<string> classes = last.NumSeatsForBookingClass.ToList();
                             var classes2 = RemoveEmptyString(firstString.Trim().Split(' '));
                             classes.AddRange(CorrectNumSeats(classes2));
                             last.NumSeatsForBookingClass = classes.ToArray();
                             RealyAddFlight = false;
+                            suspect = false;
                         }
                     }
+                }
+            }
+
+            // Проверка сомнительных рейсов и удаление
+            foreach (var f in suspectList)
+            {
+                //var suspectindex = resultFlights.FindIndex(x => x.FlightNumber == f.FlightNumber && x.DepartureDateTime == f.DepartureDateTime && x.MarketingCarrier == f.MarketingCarrier && x.OperatingCarrier == f.OperatingCarrier && x.Origin == f.Origin);
+                var existchange = resultFlights.Exists(x => x.Origin == f.Origin && x.DepartureDateTime == f.DepartureDateTime);
+                if (!existchange)
+                {
+                    resultFlights.Add(f);
                 }
             }
 

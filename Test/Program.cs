@@ -131,7 +131,7 @@ namespace Test {
             Console.Write(Environment.NewLine + Environment.NewLine + "4. GetDirectFlightsCryptic(BER, PAR, " + searchdt.ToString() + ")" + Environment.NewLine + Environment.NewLine);
             try
             {
-                var s = amUS.GetDirectFlightsCryptic("LON", "MAD", DateTime.Today.AddDays(10));
+                var s = amUS.GetDirectFlightsCryptic("GRU", "LAX", DateTime.Today);
                 Console.Write(Newtonsoft.Json.JsonConvert.SerializeObject(s));
             }
             catch (Exception ex)
@@ -139,12 +139,12 @@ namespace Test {
                 Console.Write(ex.Message + "..." + ex.StackTrace);
             }
 
-            Console.WriteLine();
+            /*Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine("WSGTFSTA/ALAKZ28HZ");
-            Console.WriteLine();
+            Console.WriteLine();*/
 
-            Console.Write("1. GetDateTimeInAirport(CDG)" + Environment.NewLine + Environment.NewLine);
+            /*Console.Write("1. GetDateTimeInAirport(CDG)" + Environment.NewLine + Environment.NewLine);
             try
             {
                 var t = amKZ.GetDateTimeInAirport("CDG");
@@ -186,7 +186,7 @@ namespace Test {
             catch (Exception ex)
             {
                 Console.Write(ex.Message + "..." + ex.StackTrace);
-            }
+            }*/
 
             //Console.WriteLine(f);
             /*string acs = "AC-XK-4N-8T-TS-AS-QX-G4-5T-MO-WX-CX-9M-DE-OU-DL-EW-YB-JB-2L-FI-6H-XE-M5-LG-ND-KS-JV-7H-S4-YR-HI-XO-NK-LX-HV-4T-X3-WS-WF-8P";
