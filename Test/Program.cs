@@ -144,7 +144,7 @@ namespace Test {
             Console.WriteLine("WSGTFSTA/ALAKZ28HZ");
             Console.WriteLine();
 
-            Console.Write("1. GetDateTimeInAirport(CDG)" + Environment.NewLine + Environment.NewLine);
+            /*Console.Write("1. GetDateTimeInAirport(CDG)" + Environment.NewLine + Environment.NewLine);
             try
             {
                 var t = amKZ.GetDateTimeInAirport("CDG");
@@ -164,12 +164,12 @@ namespace Test {
             catch (Exception ex)
             {
                 Console.Write(ex.Message + "..." + ex.StackTrace);
-            }
+            }*/
 
             Console.Write(Environment.NewLine + Environment.NewLine + "3. GetDirectFlightsOnDate(BER, PAR, " + searchdt.ToString() + ")" + Environment.NewLine + Environment.NewLine);
             try
             {
-                var f = amKZ.GetDirectFlightsOnDate("BER", "PAR", DateTime.Today.AddDays(10));
+                var f = amKZ.GetDirectFlightsOnDate("ATL", "QFE", DateTime.Today.AddDays(10));
                 Console.Write(Newtonsoft.Json.JsonConvert.SerializeObject(f));
             }
             catch (Exception ex) 
@@ -177,7 +177,7 @@ namespace Test {
                 Console.Write(ex.Message + "..." + ex.StackTrace);
             }
 
-            Console.Write(Environment.NewLine + Environment.NewLine + "4. GetDirectFlightsCryptic(BER, PAR, " + searchdt.ToString() + ")" + Environment.NewLine + Environment.NewLine);
+            /*Console.Write(Environment.NewLine + Environment.NewLine + "4. GetDirectFlightsCryptic(BER, PAR, " + searchdt.ToString() + ")" + Environment.NewLine + Environment.NewLine);
             try
             {
                 var s = amKZ.GetDirectFlightsCryptic("LON", "MAD", DateTime.Today.AddDays(10));
@@ -186,7 +186,7 @@ namespace Test {
             catch (Exception ex) 
             {
                 Console.Write(ex.Message + "..." + ex.StackTrace);
-            }
+            }*/
 
             //var f0 = AlexAm.GetDateTimeInAirport("CDG");
             //var f1 = AlexAm.GetAirportsForChanges("BER", "PAR", new DateTime(2024, 3, 10), null, 100);

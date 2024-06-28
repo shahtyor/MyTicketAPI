@@ -158,7 +158,7 @@ namespace SAEKZ {
              }
            }
          }
-         throw new GDSErrorException(errTxt.ToString());
+         //throw new GDSErrorException(errTxt.ToString());
        }
 
        // если нет инфы по перелетам
