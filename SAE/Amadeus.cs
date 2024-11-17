@@ -504,6 +504,23 @@ namespace SAE {
                 SendAmplitudeEvent(ampEv);
             }
 
+            // выбор оперирующего перевозчика
+            foreach (Flight r in resultFlights)
+            {
+                if (string.IsNullOrEmpty(r.OperatingCarrier) || r.OperatingCarrier == "??")
+                {
+                    var tmp = resultFlights.FirstOrDefault(x => x.Origin == r.Origin && x.DepartureDateTime == r.DepartureDateTime && !string.IsNullOrEmpty(x.OperatingCarrier) && x.OperatingCarrier != "??");
+                    if (tmp != null)
+                    {
+                        r.OperatingCarrier = tmp.OperatingCarrier;
+                    }
+                    else
+                    {
+                        r.OperatingCarrier = r.MarketingCarrier;
+                    }
+                }
+            }
+
             return resultFlights.ToArray();
         }
 
@@ -553,7 +570,7 @@ namespace SAE {
                         var num = aknum.Substring(5, 4).Trim();
                         if (string.IsNullOrEmpty(operate))
                         {
-                            operate = market;
+                            operate = "??";
                             if (symsuspect == ":")
                             {
                                 suspect = true;

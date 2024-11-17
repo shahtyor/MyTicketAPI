@@ -131,7 +131,7 @@ namespace Test {
             Console.Write(Environment.NewLine + Environment.NewLine + "4. GetDirectFlightsCryptic(BER, PAR, " + searchdt.ToString() + ")" + Environment.NewLine + Environment.NewLine);
             try
             {
-                var s = amUS.GetDirectFlightsCryptic("GRU", "LAX", DateTime.Today);
+                var s = amUS.GetDirectFlightsCryptic("NYC", "LAX", new DateTime(2024, 11, 23)); //DateTime.Today.AddDays(10));
                 Console.Write(Newtonsoft.Json.JsonConvert.SerializeObject(s));
             }
             catch (Exception ex)
