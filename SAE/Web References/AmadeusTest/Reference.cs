@@ -30,15 +30,6 @@ namespace SAEKZ.AmadeusTest {
     [System.Web.Services.WebServiceBindingAttribute(Name="AmadeusWebServicesBinding", Namespace="http://xml.amadeus.com")]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ReplyType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(CodeType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SuccessType1))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PersonNameType1))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PaymentFormType1))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FlightSegmentBaseType1))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FreeTextType1))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FTP_Type))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TextType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(OwnershipType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(AddressType1))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(WrittenConfInstType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(VerificationType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(TravelDateTimeType))]
@@ -56,8 +47,8 @@ namespace SAEKZ.AmadeusTest {
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ItemSearchCriterionType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ImageItemType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ImageDescriptionType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FlightSegmentBaseType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FreeTextType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FlightSegmentBaseType1))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FreeTextType1))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(DonationType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(CustomerType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(LocationType2))]
@@ -65,6 +56,15 @@ namespace SAEKZ.AmadeusTest {
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(CancelInfoRQType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(StreetNmbrType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(AcceptablePaymentCardsInfoType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FTP_Type))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TextType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(OwnershipType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(AddressType1))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SuccessType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PersonNameType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PaymentFormType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FlightSegmentBaseType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FreeTextType))]
     public partial class AmadeusWebServices : System.Web.Services.Protocols.SoapHttpClientProtocol {
         
         private Session sessionValueField;
@@ -791,7 +791,7 @@ namespace SAEKZ.AmadeusTest {
         private string correlationIDField;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("Success", typeof(SuccessType), Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
+        [System.Xml.Serialization.XmlElementAttribute("Success", typeof(SuccessType1), Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
         [System.Xml.Serialization.XmlElementAttribute("GenericErrors", typeof(GenericErrorsType))]
         [System.Xml.Serialization.XmlElementAttribute("GenericWarnings", typeof(GenericWarningsType))]
         public object[] Items {
@@ -963,8 +963,8 @@ namespace SAEKZ.AmadeusTest {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
-    public partial class SuccessType {
+    [System.Xml.Serialization.XmlTypeAttribute(TypeName="SuccessType", Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
+    public partial class SuccessType1 {
     }
     
     /// <remarks/>
@@ -975,15 +975,15 @@ namespace SAEKZ.AmadeusTest {
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://xml.amadeus.com/2010/06/Types_v1")]
     public partial class GenericErrorsType {
         
-        private ErrorType1[] errorsField;
+        private ErrorType2[] errorsField;
         
-        private ErrorType[] errors1Field;
+        private ErrorType1[] errors1Field;
         
-        private ErrorType2[] errors2Field;
+        private ErrorType[] errors2Field;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayItemAttribute("Error", IsNullable=false)]
-        public ErrorType1[] Errors {
+        public ErrorType2[] Errors {
             get {
                 return this.errorsField;
             }
@@ -995,7 +995,7 @@ namespace SAEKZ.AmadeusTest {
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayAttribute("Errors", Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
         [System.Xml.Serialization.XmlArrayItemAttribute("Error", IsNullable=false)]
-        public ErrorType[] Errors1 {
+        public ErrorType1[] Errors1 {
             get {
                 return this.errors1Field;
             }
@@ -1007,7 +1007,7 @@ namespace SAEKZ.AmadeusTest {
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayAttribute("Errors", Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
         [System.Xml.Serialization.XmlArrayItemAttribute("Error", IsNullable=false)]
-        public ErrorType2[] Errors2 {
+        public ErrorType[] Errors2 {
             get {
                 return this.errors2Field;
             }
@@ -1023,7 +1023,7 @@ namespace SAEKZ.AmadeusTest {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(TypeName="ErrorType", Namespace="http://xml.amadeus.com/2010/06/Types_v1")]
-    public partial class ErrorType1 : FreeTextType {
+    public partial class ErrorType2 : FreeTextType1 {
         
         private string typeField;
         
@@ -1131,16 +1131,16 @@ namespace SAEKZ.AmadeusTest {
     }
     
     /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ErrorType1))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ErrorType2))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(WarningType2))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(WarningType1))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(WarningType))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ErrorType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ErrorType1))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
-    public partial class FreeTextType {
+    [System.Xml.Serialization.XmlTypeAttribute(TypeName="FreeTextType", Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
+    public partial class FreeTextType1 {
         
         private string languageField;
         
@@ -1175,7 +1175,7 @@ namespace SAEKZ.AmadeusTest {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(TypeName="WarningType", Namespace="http://xml.amadeus.com/2010/06/Types_v1")]
-    public partial class WarningType1 : FreeTextType {
+    public partial class WarningType2 : FreeTextType1 {
         
         private string typeField;
         
@@ -1274,8 +1274,8 @@ namespace SAEKZ.AmadeusTest {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
-    public partial class WarningType : FreeTextType {
+    [System.Xml.Serialization.XmlTypeAttribute(TypeName="WarningType", Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
+    public partial class WarningType1 : FreeTextType1 {
         
         private string typeField;
         
@@ -1387,7 +1387,120 @@ namespace SAEKZ.AmadeusTest {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
+    [System.Xml.Serialization.XmlTypeAttribute(TypeName="ErrorType", Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
+    public partial class ErrorType1 : FreeTextType1 {
+        
+        private string typeField;
+        
+        private string shortTextField;
+        
+        private string codeField;
+        
+        private string docURLField;
+        
+        private string statusField;
+        
+        private string tagField;
+        
+        private string recordIDField;
+        
+        private string nodeListField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Type {
+            get {
+                return this.typeField;
+            }
+            set {
+                this.typeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ShortText {
+            get {
+                return this.shortTextField;
+            }
+            set {
+                this.shortTextField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Code {
+            get {
+                return this.codeField;
+            }
+            set {
+                this.codeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="anyURI")]
+        public string DocURL {
+            get {
+                return this.docURLField;
+            }
+            set {
+                this.docURLField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Status {
+            get {
+                return this.statusField;
+            }
+            set {
+                this.statusField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Tag {
+            get {
+                return this.tagField;
+            }
+            set {
+                this.tagField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string RecordID {
+            get {
+                return this.recordIDField;
+            }
+            set {
+                this.recordIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string NodeList {
+            get {
+                return this.nodeListField;
+            }
+            set {
+                this.nodeListField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
     public partial class ErrorType : FreeTextType {
         
         private string typeField;
@@ -1496,127 +1609,14 @@ namespace SAEKZ.AmadeusTest {
     }
     
     /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(WarningType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ErrorType))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName="ErrorType", Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
-    public partial class ErrorType2 : FreeTextType1 {
-        
-        private string typeField;
-        
-        private string shortTextField;
-        
-        private string codeField;
-        
-        private string docURLField;
-        
-        private string statusField;
-        
-        private string tagField;
-        
-        private string recordIDField;
-        
-        private string nodeListField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Type {
-            get {
-                return this.typeField;
-            }
-            set {
-                this.typeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ShortText {
-            get {
-                return this.shortTextField;
-            }
-            set {
-                this.shortTextField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Code {
-            get {
-                return this.codeField;
-            }
-            set {
-                this.codeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="anyURI")]
-        public string DocURL {
-            get {
-                return this.docURLField;
-            }
-            set {
-                this.docURLField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Status {
-            get {
-                return this.statusField;
-            }
-            set {
-                this.statusField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Tag {
-            get {
-                return this.tagField;
-            }
-            set {
-                this.tagField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string RecordID {
-            get {
-                return this.recordIDField;
-            }
-            set {
-                this.recordIDField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string NodeList {
-            get {
-                return this.nodeListField;
-            }
-            set {
-                this.nodeListField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(WarningType2))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ErrorType2))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName="FreeTextType", Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
-    public partial class FreeTextType1 {
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
+    public partial class FreeTextType {
         
         private string languageField;
         
@@ -1650,8 +1650,8 @@ namespace SAEKZ.AmadeusTest {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName="WarningType", Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
-    public partial class WarningType2 : FreeTextType1 {
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
+    public partial class WarningType : FreeTextType {
         
         private string typeField;
         
@@ -1753,15 +1753,15 @@ namespace SAEKZ.AmadeusTest {
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://xml.amadeus.com/2010/06/Types_v1")]
     public partial class GenericWarningsType {
         
-        private ErrorType1[] warningsField;
+        private ErrorType2[] warningsField;
         
-        private WarningType[] warnings1Field;
+        private WarningType1[] warnings1Field;
         
-        private WarningType2[] warnings2Field;
+        private WarningType[] warnings2Field;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayItemAttribute("Warning", IsNullable=false)]
-        public ErrorType1[] Warnings {
+        public ErrorType2[] Warnings {
             get {
                 return this.warningsField;
             }
@@ -1773,7 +1773,7 @@ namespace SAEKZ.AmadeusTest {
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayAttribute("Warnings", Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
         [System.Xml.Serialization.XmlArrayItemAttribute("Warning", IsNullable=false)]
-        public WarningType[] Warnings1 {
+        public WarningType1[] Warnings1 {
             get {
                 return this.warnings1Field;
             }
@@ -1785,7 +1785,7 @@ namespace SAEKZ.AmadeusTest {
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayAttribute("Warnings", Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
         [System.Xml.Serialization.XmlArrayItemAttribute("Warning", IsNullable=false)]
-        public WarningType2[] Warnings2 {
+        public WarningType[] Warnings2 {
             get {
                 return this.warnings2Field;
             }
@@ -1903,2625 +1903,6 @@ namespace SAEKZ.AmadeusTest {
             }
             set {
                 this.descField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName="SuccessType", Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
-    public partial class SuccessType1 {
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName="SourceType", Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
-    public partial class SourceType1 {
-        
-        private SourceTypeRequestorID1 requestorIDField;
-        
-        private SourceTypePosition1 positionField;
-        
-        private SourceTypeBookingChannel1 bookingChannelField;
-        
-        private string agentSineField;
-        
-        private string pseudoCityCodeField;
-        
-        private string iSOCountryField;
-        
-        private string iSOCurrencyField;
-        
-        private string agentDutyCodeField;
-        
-        private string airlineVendorIDField;
-        
-        private string airportCodeField;
-        
-        private string firstDepartPointField;
-        
-        private string eRSP_UserIDField;
-        
-        private string terminalIDField;
-        
-        /// <remarks/>
-        public SourceTypeRequestorID1 RequestorID {
-            get {
-                return this.requestorIDField;
-            }
-            set {
-                this.requestorIDField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public SourceTypePosition1 Position {
-            get {
-                return this.positionField;
-            }
-            set {
-                this.positionField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public SourceTypeBookingChannel1 BookingChannel {
-            get {
-                return this.bookingChannelField;
-            }
-            set {
-                this.bookingChannelField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string AgentSine {
-            get {
-                return this.agentSineField;
-            }
-            set {
-                this.agentSineField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string PseudoCityCode {
-            get {
-                return this.pseudoCityCodeField;
-            }
-            set {
-                this.pseudoCityCodeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ISOCountry {
-            get {
-                return this.iSOCountryField;
-            }
-            set {
-                this.iSOCountryField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ISOCurrency {
-            get {
-                return this.iSOCurrencyField;
-            }
-            set {
-                this.iSOCurrencyField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string AgentDutyCode {
-            get {
-                return this.agentDutyCodeField;
-            }
-            set {
-                this.agentDutyCodeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string AirlineVendorID {
-            get {
-                return this.airlineVendorIDField;
-            }
-            set {
-                this.airlineVendorIDField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string AirportCode {
-            get {
-                return this.airportCodeField;
-            }
-            set {
-                this.airportCodeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string FirstDepartPoint {
-            get {
-                return this.firstDepartPointField;
-            }
-            set {
-                this.firstDepartPointField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ERSP_UserID {
-            get {
-                return this.eRSP_UserIDField;
-            }
-            set {
-                this.eRSP_UserIDField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string TerminalID {
-            get {
-                return this.terminalIDField;
-            }
-            set {
-                this.terminalIDField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
-    public partial class SourceTypeRequestorID1 : UniqueID_Type {
-        
-        private string messagePasswordField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string MessagePassword {
-            get {
-                return this.messagePasswordField;
-            }
-            set {
-                this.messagePasswordField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
-    public partial class SourceTypePosition1 {
-        
-        private string latitudeField;
-        
-        private string longitudeField;
-        
-        private string altitudeField;
-        
-        private string altitudeUnitOfMeasureCodeField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Latitude {
-            get {
-                return this.latitudeField;
-            }
-            set {
-                this.latitudeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Longitude {
-            get {
-                return this.longitudeField;
-            }
-            set {
-                this.longitudeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Altitude {
-            get {
-                return this.altitudeField;
-            }
-            set {
-                this.altitudeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string AltitudeUnitOfMeasureCode {
-            get {
-                return this.altitudeUnitOfMeasureCodeField;
-            }
-            set {
-                this.altitudeUnitOfMeasureCodeField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
-    public partial class SourceTypeBookingChannel1 {
-        
-        private CompanyNameType companyNameField;
-        
-        private string typeField;
-        
-        private bool primaryField;
-        
-        private bool primaryFieldSpecified;
-        
-        /// <remarks/>
-        public CompanyNameType CompanyName {
-            get {
-                return this.companyNameField;
-            }
-            set {
-                this.companyNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Type {
-            get {
-                return this.typeField;
-            }
-            set {
-                this.typeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool Primary {
-            get {
-                return this.primaryField;
-            }
-            set {
-                this.primaryField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool PrimarySpecified {
-            get {
-                return this.primaryFieldSpecified;
-            }
-            set {
-                this.primaryFieldSpecified = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName="PersonNameType", Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
-    public partial class PersonNameType1 {
-        
-        private string[] namePrefixField;
-        
-        private string[] givenNameField;
-        
-        private string[] middleNameField;
-        
-        private string surnamePrefixField;
-        
-        private string surnameField;
-        
-        private string[] nameSuffixField;
-        
-        private string[] nameTitleField;
-        
-        private BankAcctTypeShareSynchInd shareSynchIndField;
-        
-        private bool shareSynchIndFieldSpecified;
-        
-        private BankAcctTypeShareMarketInd shareMarketIndField;
-        
-        private bool shareMarketIndFieldSpecified;
-        
-        private string nameTypeField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("NamePrefix")]
-        public string[] NamePrefix {
-            get {
-                return this.namePrefixField;
-            }
-            set {
-                this.namePrefixField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("GivenName")]
-        public string[] GivenName {
-            get {
-                return this.givenNameField;
-            }
-            set {
-                this.givenNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("MiddleName")]
-        public string[] MiddleName {
-            get {
-                return this.middleNameField;
-            }
-            set {
-                this.middleNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string SurnamePrefix {
-            get {
-                return this.surnamePrefixField;
-            }
-            set {
-                this.surnamePrefixField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Surname {
-            get {
-                return this.surnameField;
-            }
-            set {
-                this.surnameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("NameSuffix")]
-        public string[] NameSuffix {
-            get {
-                return this.nameSuffixField;
-            }
-            set {
-                this.nameSuffixField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("NameTitle")]
-        public string[] NameTitle {
-            get {
-                return this.nameTitleField;
-            }
-            set {
-                this.nameTitleField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public BankAcctTypeShareSynchInd ShareSynchInd {
-            get {
-                return this.shareSynchIndField;
-            }
-            set {
-                this.shareSynchIndField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool ShareSynchIndSpecified {
-            get {
-                return this.shareSynchIndFieldSpecified;
-            }
-            set {
-                this.shareSynchIndFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public BankAcctTypeShareMarketInd ShareMarketInd {
-            get {
-                return this.shareMarketIndField;
-            }
-            set {
-                this.shareMarketIndField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool ShareMarketIndSpecified {
-            get {
-                return this.shareMarketIndFieldSpecified;
-            }
-            set {
-                this.shareMarketIndFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string NameType {
-            get {
-                return this.nameTypeField;
-            }
-            set {
-                this.nameTypeField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
-    public enum BankAcctTypeShareSynchInd {
-        
-        /// <remarks/>
-        Yes,
-        
-        /// <remarks/>
-        No,
-        
-        /// <remarks/>
-        Inherit,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
-    public enum BankAcctTypeShareMarketInd {
-        
-        /// <remarks/>
-        Yes,
-        
-        /// <remarks/>
-        No,
-        
-        /// <remarks/>
-        Inherit,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName="PaymentCardType", Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
-    public partial class PaymentCardType1 {
-        
-        private string cardHolderNameField;
-        
-        private PaymentCardTypeCardIssuerName1 cardIssuerNameField;
-        
-        private PaymentCardTypeAddress addressField;
-        
-        private PaymentCardTypeCustomerFileRef customerFileRefField;
-        
-        private BankAcctTypeShareSynchInd shareSynchIndField;
-        
-        private bool shareSynchIndFieldSpecified;
-        
-        private BankAcctTypeShareMarketInd shareMarketIndField;
-        
-        private bool shareMarketIndFieldSpecified;
-        
-        private string cardTypeField;
-        
-        private string cardCodeField;
-        
-        private string cardNumberField;
-        
-        private string seriesCodeField;
-        
-        private string effectiveDateField;
-        
-        private string expireDateField;
-        
-        private string maskedCardNumberField;
-        
-        private string cardHolderRPHField;
-        
-        private string addressValidationField;
-        
-        private string approvalCodeField;
-        
-        private string corporateContractCodeField;
-        
-        private string textField;
-        
-        private string extendedPaymentCodeField;
-        
-        private string approvalTypeField;
-        
-        private decimal amountField;
-        
-        private bool amountFieldSpecified;
-        
-        /// <remarks/>
-        public string CardHolderName {
-            get {
-                return this.cardHolderNameField;
-            }
-            set {
-                this.cardHolderNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public PaymentCardTypeCardIssuerName1 CardIssuerName {
-            get {
-                return this.cardIssuerNameField;
-            }
-            set {
-                this.cardIssuerNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public PaymentCardTypeAddress Address {
-            get {
-                return this.addressField;
-            }
-            set {
-                this.addressField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public PaymentCardTypeCustomerFileRef CustomerFileRef {
-            get {
-                return this.customerFileRefField;
-            }
-            set {
-                this.customerFileRefField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public BankAcctTypeShareSynchInd ShareSynchInd {
-            get {
-                return this.shareSynchIndField;
-            }
-            set {
-                this.shareSynchIndField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool ShareSynchIndSpecified {
-            get {
-                return this.shareSynchIndFieldSpecified;
-            }
-            set {
-                this.shareSynchIndFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public BankAcctTypeShareMarketInd ShareMarketInd {
-            get {
-                return this.shareMarketIndField;
-            }
-            set {
-                this.shareMarketIndField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool ShareMarketIndSpecified {
-            get {
-                return this.shareMarketIndFieldSpecified;
-            }
-            set {
-                this.shareMarketIndFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string CardType {
-            get {
-                return this.cardTypeField;
-            }
-            set {
-                this.cardTypeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string CardCode {
-            get {
-                return this.cardCodeField;
-            }
-            set {
-                this.cardCodeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string CardNumber {
-            get {
-                return this.cardNumberField;
-            }
-            set {
-                this.cardNumberField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string SeriesCode {
-            get {
-                return this.seriesCodeField;
-            }
-            set {
-                this.seriesCodeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string EffectiveDate {
-            get {
-                return this.effectiveDateField;
-            }
-            set {
-                this.effectiveDateField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ExpireDate {
-            get {
-                return this.expireDateField;
-            }
-            set {
-                this.expireDateField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string MaskedCardNumber {
-            get {
-                return this.maskedCardNumberField;
-            }
-            set {
-                this.maskedCardNumberField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string CardHolderRPH {
-            get {
-                return this.cardHolderRPHField;
-            }
-            set {
-                this.cardHolderRPHField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string AddressValidation {
-            get {
-                return this.addressValidationField;
-            }
-            set {
-                this.addressValidationField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ApprovalCode {
-            get {
-                return this.approvalCodeField;
-            }
-            set {
-                this.approvalCodeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string CorporateContractCode {
-            get {
-                return this.corporateContractCodeField;
-            }
-            set {
-                this.corporateContractCodeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Text {
-            get {
-                return this.textField;
-            }
-            set {
-                this.textField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ExtendedPaymentCode {
-            get {
-                return this.extendedPaymentCodeField;
-            }
-            set {
-                this.extendedPaymentCodeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ApprovalType {
-            get {
-                return this.approvalTypeField;
-            }
-            set {
-                this.approvalTypeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public decimal Amount {
-            get {
-                return this.amountField;
-            }
-            set {
-                this.amountField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool AmountSpecified {
-            get {
-                return this.amountFieldSpecified;
-            }
-            set {
-                this.amountFieldSpecified = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
-    public partial class PaymentCardTypeCardIssuerName1 {
-        
-        private string bankIDField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string BankID {
-            get {
-                return this.bankIDField;
-            }
-            set {
-                this.bankIDField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
-    public partial class PaymentCardTypeAddress : AddressType2 {
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName="AddressType", Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
-    public partial class AddressType2 {
-        
-        private AddressTypeStreetNmbr1 streetNmbrField;
-        
-        private string bldgRoomField;
-        
-        private string[] addressLineField;
-        
-        private string cityNameField;
-        
-        private string postalCodeField;
-        
-        private string countyField;
-        
-        private StateProvType1 stateProvField;
-        
-        private CountryNameType1 countryNameField;
-        
-        private bool formattedIndField;
-        
-        private bool defaultIndField;
-        
-        private string useTypeField;
-        
-        private string rPHField;
-        
-        private string typeField;
-        
-        public AddressType2() {
-            this.formattedIndField = false;
-            this.defaultIndField = false;
-        }
-        
-        /// <remarks/>
-        public AddressTypeStreetNmbr1 StreetNmbr {
-            get {
-                return this.streetNmbrField;
-            }
-            set {
-                this.streetNmbrField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string BldgRoom {
-            get {
-                return this.bldgRoomField;
-            }
-            set {
-                this.bldgRoomField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("AddressLine")]
-        public string[] AddressLine {
-            get {
-                return this.addressLineField;
-            }
-            set {
-                this.addressLineField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string CityName {
-            get {
-                return this.cityNameField;
-            }
-            set {
-                this.cityNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string PostalCode {
-            get {
-                return this.postalCodeField;
-            }
-            set {
-                this.postalCodeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string County {
-            get {
-                return this.countyField;
-            }
-            set {
-                this.countyField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public StateProvType1 StateProv {
-            get {
-                return this.stateProvField;
-            }
-            set {
-                this.stateProvField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public CountryNameType1 CountryName {
-            get {
-                return this.countryNameField;
-            }
-            set {
-                this.countryNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute(false)]
-        public bool FormattedInd {
-            get {
-                return this.formattedIndField;
-            }
-            set {
-                this.formattedIndField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute(false)]
-        public bool DefaultInd {
-            get {
-                return this.defaultIndField;
-            }
-            set {
-                this.defaultIndField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string UseType {
-            get {
-                return this.useTypeField;
-            }
-            set {
-                this.useTypeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string RPH {
-            get {
-                return this.rPHField;
-            }
-            set {
-                this.rPHField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Type {
-            get {
-                return this.typeField;
-            }
-            set {
-                this.typeField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
-    public partial class AddressTypeStreetNmbr1 {
-        
-        private string pOBoxField;
-        
-        private string streetNmbrSuffixField;
-        
-        private string streetDirectionField;
-        
-        private string ruralRouteNmbrField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string POBox {
-            get {
-                return this.pOBoxField;
-            }
-            set {
-                this.pOBoxField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string StreetNmbrSuffix {
-            get {
-                return this.streetNmbrSuffixField;
-            }
-            set {
-                this.streetNmbrSuffixField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string StreetDirection {
-            get {
-                return this.streetDirectionField;
-            }
-            set {
-                this.streetDirectionField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string RuralRouteNmbr {
-            get {
-                return this.ruralRouteNmbrField;
-            }
-            set {
-                this.ruralRouteNmbrField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName="StateProvType", Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
-    public partial class StateProvType1 {
-        
-        private string stateCodeField;
-        
-        private string valueField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string StateCode {
-            get {
-                return this.stateCodeField;
-            }
-            set {
-                this.stateCodeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlTextAttribute()]
-        public string Value {
-            get {
-                return this.valueField;
-            }
-            set {
-                this.valueField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName="CountryNameType", Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
-    public partial class CountryNameType1 {
-        
-        private string codeField;
-        
-        private string valueField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Code {
-            get {
-                return this.codeField;
-            }
-            set {
-                this.codeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlTextAttribute()]
-        public string Value {
-            get {
-                return this.valueField;
-            }
-            set {
-                this.valueField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
-    public partial class PaymentCardTypeCustomerFileRef {
-        
-        private string uRLField;
-        
-        private string typeField;
-        
-        private string instanceField;
-        
-        private string iD_ContextField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="anyURI")]
-        public string URL {
-            get {
-                return this.uRLField;
-            }
-            set {
-                this.uRLField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Type {
-            get {
-                return this.typeField;
-            }
-            set {
-                this.typeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Instance {
-            get {
-                return this.instanceField;
-            }
-            set {
-                this.instanceField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ID_Context {
-            get {
-                return this.iD_ContextField;
-            }
-            set {
-                this.iD_ContextField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PaymentDetailType1))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName="PaymentFormType", Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
-    public partial class PaymentFormType1 {
-        
-        private object itemField;
-        
-        private BankAcctTypeShareSynchInd shareSynchIndField;
-        
-        private bool shareSynchIndFieldSpecified;
-        
-        private BankAcctTypeShareMarketInd shareMarketIndField;
-        
-        private bool shareMarketIndFieldSpecified;
-        
-        private string costCenterIDField;
-        
-        private string rPHField;
-        
-        private PaymentFormTypePaymentTransactionTypeCode1 paymentTransactionTypeCodeField;
-        
-        private bool paymentTransactionTypeCodeFieldSpecified;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("BankAcct", typeof(BankAcctType1))]
-        [System.Xml.Serialization.XmlElementAttribute("Cash", typeof(PaymentFormTypeCash1))]
-        [System.Xml.Serialization.XmlElementAttribute("DirectBill", typeof(DirectBillType1))]
-        [System.Xml.Serialization.XmlElementAttribute("LoyaltyRedemption", typeof(PaymentFormTypeLoyaltyRedemption1))]
-        [System.Xml.Serialization.XmlElementAttribute("MiscChargeOrder", typeof(PaymentFormTypeMiscChargeOrder1))]
-        [System.Xml.Serialization.XmlElementAttribute("Other", typeof(PaymentFormTypeOther))]
-        [System.Xml.Serialization.XmlElementAttribute("PaymentCard", typeof(PaymentCardType1))]
-        [System.Xml.Serialization.XmlElementAttribute("Voucher", typeof(PaymentFormTypeVoucher1))]
-        public object Item {
-            get {
-                return this.itemField;
-            }
-            set {
-                this.itemField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public BankAcctTypeShareSynchInd ShareSynchInd {
-            get {
-                return this.shareSynchIndField;
-            }
-            set {
-                this.shareSynchIndField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool ShareSynchIndSpecified {
-            get {
-                return this.shareSynchIndFieldSpecified;
-            }
-            set {
-                this.shareSynchIndFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public BankAcctTypeShareMarketInd ShareMarketInd {
-            get {
-                return this.shareMarketIndField;
-            }
-            set {
-                this.shareMarketIndField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool ShareMarketIndSpecified {
-            get {
-                return this.shareMarketIndFieldSpecified;
-            }
-            set {
-                this.shareMarketIndFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string CostCenterID {
-            get {
-                return this.costCenterIDField;
-            }
-            set {
-                this.costCenterIDField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string RPH {
-            get {
-                return this.rPHField;
-            }
-            set {
-                this.rPHField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public PaymentFormTypePaymentTransactionTypeCode1 PaymentTransactionTypeCode {
-            get {
-                return this.paymentTransactionTypeCodeField;
-            }
-            set {
-                this.paymentTransactionTypeCodeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool PaymentTransactionTypeCodeSpecified {
-            get {
-                return this.paymentTransactionTypeCodeFieldSpecified;
-            }
-            set {
-                this.paymentTransactionTypeCodeFieldSpecified = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName="BankAcctType", Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
-    public partial class BankAcctType1 {
-        
-        private string bankAcctNameField;
-        
-        private BankAcctTypeShareSynchInd shareSynchIndField;
-        
-        private bool shareSynchIndFieldSpecified;
-        
-        private BankAcctTypeShareMarketInd shareMarketIndField;
-        
-        private bool shareMarketIndFieldSpecified;
-        
-        private string bankIDField;
-        
-        private string acctTypeField;
-        
-        private string bankAcctNumberField;
-        
-        private bool checksAcceptedIndField;
-        
-        private bool checksAcceptedIndFieldSpecified;
-        
-        /// <remarks/>
-        public string BankAcctName {
-            get {
-                return this.bankAcctNameField;
-            }
-            set {
-                this.bankAcctNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public BankAcctTypeShareSynchInd ShareSynchInd {
-            get {
-                return this.shareSynchIndField;
-            }
-            set {
-                this.shareSynchIndField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool ShareSynchIndSpecified {
-            get {
-                return this.shareSynchIndFieldSpecified;
-            }
-            set {
-                this.shareSynchIndFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public BankAcctTypeShareMarketInd ShareMarketInd {
-            get {
-                return this.shareMarketIndField;
-            }
-            set {
-                this.shareMarketIndField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool ShareMarketIndSpecified {
-            get {
-                return this.shareMarketIndFieldSpecified;
-            }
-            set {
-                this.shareMarketIndFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string BankID {
-            get {
-                return this.bankIDField;
-            }
-            set {
-                this.bankIDField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string AcctType {
-            get {
-                return this.acctTypeField;
-            }
-            set {
-                this.acctTypeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string BankAcctNumber {
-            get {
-                return this.bankAcctNumberField;
-            }
-            set {
-                this.bankAcctNumberField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool ChecksAcceptedInd {
-            get {
-                return this.checksAcceptedIndField;
-            }
-            set {
-                this.checksAcceptedIndField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool ChecksAcceptedIndSpecified {
-            get {
-                return this.checksAcceptedIndFieldSpecified;
-            }
-            set {
-                this.checksAcceptedIndFieldSpecified = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
-    public partial class PaymentFormTypeCash1 {
-        
-        private bool cashIndicatorField;
-        
-        public PaymentFormTypeCash1() {
-            this.cashIndicatorField = true;
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute(true)]
-        public bool CashIndicator {
-            get {
-                return this.cashIndicatorField;
-            }
-            set {
-                this.cashIndicatorField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName="DirectBillType", Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
-    public partial class DirectBillType1 {
-        
-        private DirectBillTypeCompanyName1 companyNameField;
-        
-        private AddressType2 addressField;
-        
-        private BankAcctTypeShareSynchInd shareSynchIndField;
-        
-        private bool shareSynchIndFieldSpecified;
-        
-        private BankAcctTypeShareMarketInd shareMarketIndField;
-        
-        private bool shareMarketIndFieldSpecified;
-        
-        private string directBill_IDField;
-        
-        /// <remarks/>
-        public DirectBillTypeCompanyName1 CompanyName {
-            get {
-                return this.companyNameField;
-            }
-            set {
-                this.companyNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public AddressType2 Address {
-            get {
-                return this.addressField;
-            }
-            set {
-                this.addressField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public BankAcctTypeShareSynchInd ShareSynchInd {
-            get {
-                return this.shareSynchIndField;
-            }
-            set {
-                this.shareSynchIndField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool ShareSynchIndSpecified {
-            get {
-                return this.shareSynchIndFieldSpecified;
-            }
-            set {
-                this.shareSynchIndFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public BankAcctTypeShareMarketInd ShareMarketInd {
-            get {
-                return this.shareMarketIndField;
-            }
-            set {
-                this.shareMarketIndField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool ShareMarketIndSpecified {
-            get {
-                return this.shareMarketIndFieldSpecified;
-            }
-            set {
-                this.shareMarketIndFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string DirectBill_ID {
-            get {
-                return this.directBill_IDField;
-            }
-            set {
-                this.directBill_IDField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
-    public partial class DirectBillTypeCompanyName1 : CompanyNameType {
-        
-        private string contactNameField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ContactName {
-            get {
-                return this.contactNameField;
-            }
-            set {
-                this.contactNameField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
-    public partial class PaymentFormTypeLoyaltyRedemption1 {
-        
-        private string certificateNumberField;
-        
-        private string memberNumberField;
-        
-        private string programNameField;
-        
-        private string promotionCodeField;
-        
-        private string[] promotionVendorCodeField;
-        
-        private string redemptionQuantityField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string CertificateNumber {
-            get {
-                return this.certificateNumberField;
-            }
-            set {
-                this.certificateNumberField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string MemberNumber {
-            get {
-                return this.memberNumberField;
-            }
-            set {
-                this.memberNumberField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ProgramName {
-            get {
-                return this.programNameField;
-            }
-            set {
-                this.programNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string PromotionCode {
-            get {
-                return this.promotionCodeField;
-            }
-            set {
-                this.promotionCodeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string[] PromotionVendorCode {
-            get {
-                return this.promotionVendorCodeField;
-            }
-            set {
-                this.promotionVendorCodeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="positiveInteger")]
-        public string RedemptionQuantity {
-            get {
-                return this.redemptionQuantityField;
-            }
-            set {
-                this.redemptionQuantityField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
-    public partial class PaymentFormTypeMiscChargeOrder1 {
-        
-        private string ticketNumberField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string TicketNumber {
-            get {
-                return this.ticketNumberField;
-            }
-            set {
-                this.ticketNumberField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
-    public partial class PaymentFormTypeOther {
-        
-        private string textField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Text {
-            get {
-                return this.textField;
-            }
-            set {
-                this.textField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
-    public partial class PaymentFormTypeVoucher1 {
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
-    public enum PaymentFormTypePaymentTransactionTypeCode1 {
-        
-        /// <remarks/>
-        charge,
-        
-        /// <remarks/>
-        reserve,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName="PaymentDetailType", Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
-    public partial class PaymentDetailType1 : PaymentFormType1 {
-        
-        private PaymentDetailTypePaymentAmount1 paymentAmountField;
-        
-        /// <remarks/>
-        public PaymentDetailTypePaymentAmount1 PaymentAmount {
-            get {
-                return this.paymentAmountField;
-            }
-            set {
-                this.paymentAmountField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
-    public partial class PaymentDetailTypePaymentAmount1 {
-        
-        private decimal amountField;
-        
-        private bool amountFieldSpecified;
-        
-        private string approvalCodeField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public decimal Amount {
-            get {
-                return this.amountField;
-            }
-            set {
-                this.amountField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool AmountSpecified {
-            get {
-                return this.amountFieldSpecified;
-            }
-            set {
-                this.amountFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ApprovalCode {
-            get {
-                return this.approvalCodeField;
-            }
-            set {
-                this.approvalCodeField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName="EquipmentType", Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
-    public partial class EquipmentType1 {
-        
-        private string airEquipTypeField;
-        
-        private bool changeofGaugeField;
-        
-        private string valueField;
-        
-        public EquipmentType1() {
-            this.changeofGaugeField = false;
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string AirEquipType {
-            get {
-                return this.airEquipTypeField;
-            }
-            set {
-                this.airEquipTypeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute(false)]
-        public bool ChangeofGauge {
-            get {
-                return this.changeofGaugeField;
-            }
-            set {
-                this.changeofGaugeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlTextAttribute()]
-        public string Value {
-            get {
-                return this.valueField;
-            }
-            set {
-                this.valueField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FlightSegmentType))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName="FlightSegmentBaseType", Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
-    public partial class FlightSegmentBaseType1 {
-        
-        private FlightSegmentBaseTypeDepartureAirport1 departureAirportField;
-        
-        private FlightSegmentBaseTypeArrivalAirport1 arrivalAirportField;
-        
-        private FlightSegmentBaseTypeOperatingAirline operatingAirlineField;
-        
-        private EquipmentType1[] equipmentField;
-        
-        private System.DateTime departureDateTimeField;
-        
-        private bool departureDateTimeFieldSpecified;
-        
-        private System.DateTime arrivalDateTimeField;
-        
-        private bool arrivalDateTimeFieldSpecified;
-        
-        private string stopQuantityField;
-        
-        private string rPHField;
-        
-        private string infoSourceField;
-        
-        /// <remarks/>
-        public FlightSegmentBaseTypeDepartureAirport1 DepartureAirport {
-            get {
-                return this.departureAirportField;
-            }
-            set {
-                this.departureAirportField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public FlightSegmentBaseTypeArrivalAirport1 ArrivalAirport {
-            get {
-                return this.arrivalAirportField;
-            }
-            set {
-                this.arrivalAirportField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public FlightSegmentBaseTypeOperatingAirline OperatingAirline {
-            get {
-                return this.operatingAirlineField;
-            }
-            set {
-                this.operatingAirlineField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("Equipment")]
-        public EquipmentType1[] Equipment {
-            get {
-                return this.equipmentField;
-            }
-            set {
-                this.equipmentField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public System.DateTime DepartureDateTime {
-            get {
-                return this.departureDateTimeField;
-            }
-            set {
-                this.departureDateTimeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool DepartureDateTimeSpecified {
-            get {
-                return this.departureDateTimeFieldSpecified;
-            }
-            set {
-                this.departureDateTimeFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public System.DateTime ArrivalDateTime {
-            get {
-                return this.arrivalDateTimeField;
-            }
-            set {
-                this.arrivalDateTimeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool ArrivalDateTimeSpecified {
-            get {
-                return this.arrivalDateTimeFieldSpecified;
-            }
-            set {
-                this.arrivalDateTimeFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="nonNegativeInteger")]
-        public string StopQuantity {
-            get {
-                return this.stopQuantityField;
-            }
-            set {
-                this.stopQuantityField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string RPH {
-            get {
-                return this.rPHField;
-            }
-            set {
-                this.rPHField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string InfoSource {
-            get {
-                return this.infoSourceField;
-            }
-            set {
-                this.infoSourceField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
-    public partial class FlightSegmentBaseTypeDepartureAirport1 {
-        
-        private string locationCodeField;
-        
-        private string codeContextField;
-        
-        private string terminalField;
-        
-        private string gateField;
-        
-        public FlightSegmentBaseTypeDepartureAirport1() {
-            this.codeContextField = "IATA";
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string LocationCode {
-            get {
-                return this.locationCodeField;
-            }
-            set {
-                this.locationCodeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute("IATA")]
-        public string CodeContext {
-            get {
-                return this.codeContextField;
-            }
-            set {
-                this.codeContextField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Terminal {
-            get {
-                return this.terminalField;
-            }
-            set {
-                this.terminalField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Gate {
-            get {
-                return this.gateField;
-            }
-            set {
-                this.gateField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
-    public partial class FlightSegmentBaseTypeArrivalAirport1 {
-        
-        private string locationCodeField;
-        
-        private string codeContextField;
-        
-        private string terminalField;
-        
-        private string gateField;
-        
-        public FlightSegmentBaseTypeArrivalAirport1() {
-            this.codeContextField = "IATA";
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string LocationCode {
-            get {
-                return this.locationCodeField;
-            }
-            set {
-                this.locationCodeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute("IATA")]
-        public string CodeContext {
-            get {
-                return this.codeContextField;
-            }
-            set {
-                this.codeContextField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Terminal {
-            get {
-                return this.terminalField;
-            }
-            set {
-                this.terminalField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Gate {
-            get {
-                return this.gateField;
-            }
-            set {
-                this.gateField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
-    public partial class FlightSegmentBaseTypeOperatingAirline : OperatingAirlineType {
-        
-        private string operationalSuffixField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string OperationalSuffix {
-            get {
-                return this.operationalSuffixField;
-            }
-            set {
-                this.operationalSuffixField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
-    public partial class OperatingAirlineType : CompanyNameType {
-        
-        private string flightNumberField;
-        
-        private string resBookDesigCodeField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string FlightNumber {
-            get {
-                return this.flightNumberField;
-            }
-            set {
-                this.flightNumberField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ResBookDesigCode {
-            get {
-                return this.resBookDesigCodeField;
-            }
-            set {
-                this.resBookDesigCodeField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
-    public partial class FlightSegmentType : FlightSegmentBaseType1 {
-        
-        private FlightSegmentTypeMarketingAirline marketingAirlineField;
-        
-        private string flightNumberField;
-        
-        private string tourOperatorFlightIDField;
-        
-        private string operationalSuffixField;
-        
-        /// <remarks/>
-        public FlightSegmentTypeMarketingAirline MarketingAirline {
-            get {
-                return this.marketingAirlineField;
-            }
-            set {
-                this.marketingAirlineField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string FlightNumber {
-            get {
-                return this.flightNumberField;
-            }
-            set {
-                this.flightNumberField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string TourOperatorFlightID {
-            get {
-                return this.tourOperatorFlightIDField;
-            }
-            set {
-                this.tourOperatorFlightIDField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string OperationalSuffix {
-            get {
-                return this.operationalSuffixField;
-            }
-            set {
-                this.operationalSuffixField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
-    public partial class FlightSegmentTypeMarketingAirline : CompanyNameType {
-        
-        private FlightSegmentTypeMarketingAirlineSingleVendorInd singleVendorIndField;
-        
-        private bool singleVendorIndFieldSpecified;
-        
-        private string resBookDesigCodeField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public FlightSegmentTypeMarketingAirlineSingleVendorInd SingleVendorInd {
-            get {
-                return this.singleVendorIndField;
-            }
-            set {
-                this.singleVendorIndField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool SingleVendorIndSpecified {
-            get {
-                return this.singleVendorIndFieldSpecified;
-            }
-            set {
-                this.singleVendorIndFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ResBookDesigCode {
-            get {
-                return this.resBookDesigCodeField;
-            }
-            set {
-                this.resBookDesigCodeField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
-    public enum FlightSegmentTypeMarketingAirlineSingleVendorInd {
-        
-        /// <remarks/>
-        SingleVndr,
-        
-        /// <remarks/>
-        Alliance,
-    }
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FTP_TypeWithLayoutType))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://xml.amadeus.com/2010/06/AppMdw_CommonTypes_v3")]
-    public partial class FTP_Type {
-        
-        private string filenameField;
-        
-        private string pathField;
-        
-        private string fileHashField;
-        
-        private string fTPIDField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Filename {
-            get {
-                return this.filenameField;
-            }
-            set {
-                this.filenameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Path {
-            get {
-                return this.pathField;
-            }
-            set {
-                this.pathField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string FileHash {
-            get {
-                return this.fileHashField;
-            }
-            set {
-                this.fileHashField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string FTPID {
-            get {
-                return this.fTPIDField;
-            }
-            set {
-                this.fTPIDField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://xml.amadeus.com/2010/06/AppMdw_CommonTypes_v3")]
-    public partial class FTP_TypeWithLayoutType : FTP_Type {
-        
-        private string layoutTypeField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string LayoutType {
-            get {
-                return this.layoutTypeField;
-            }
-            set {
-                this.layoutTypeField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://xml.amadeus.com/2010/06/AppMdw_CommonTypes_v3")]
-    public partial class TextType {
-        
-        private string encodingField;
-        
-        private string valueField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Encoding {
-            get {
-                return this.encodingField;
-            }
-            set {
-                this.encodingField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Value {
-            get {
-                return this.valueField;
-            }
-            set {
-                this.valueField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://xml.amadeus.com/2010/06/AppMdw_CommonTypes_v3")]
-    public partial class OwnershipType {
-        
-        private string organizationCodeField;
-        
-        private string applicationLabelField;
-        
-        private string companyCodeField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string OrganizationCode {
-            get {
-                return this.organizationCodeField;
-            }
-            set {
-                this.organizationCodeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ApplicationLabel {
-            get {
-                return this.applicationLabelField;
-            }
-            set {
-                this.applicationLabelField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string CompanyCode {
-            get {
-                return this.companyCodeField;
-            }
-            set {
-                this.companyCodeField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(AddressWithModeType))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(TypeName="AddressType", Namespace="http://xml.amadeus.com/2010/06/AppMdw_CommonTypes_v3")]
-    public partial class AddressType1 {
-        
-        private string formatField;
-        
-        private string valueField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Format {
-            get {
-                return this.formatField;
-            }
-            set {
-                this.formatField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Value {
-            get {
-                return this.valueField;
-            }
-            set {
-                this.valueField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://xml.amadeus.com/2010/06/AppMdw_CommonTypes_v3")]
-    public partial class AddressWithModeType : AddressType1 {
-        
-        private string modeField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Mode {
-            get {
-                return this.modeField;
-            }
-            set {
-                this.modeField = value;
             }
         }
     }
@@ -5146,7 +2527,7 @@ namespace SAEKZ.AmadeusTest {
         
         private VerificationTypeTelephoneInfo telephoneInfoField;
         
-        private PaymentCardType paymentCardField;
+        private PaymentCardType1 paymentCardField;
         
         private AddressInfoType addressInfoField;
         
@@ -5195,7 +2576,7 @@ namespace SAEKZ.AmadeusTest {
         }
         
         /// <remarks/>
-        public PaymentCardType PaymentCard {
+        public PaymentCardType1 PaymentCard {
             get {
                 return this.paymentCardField;
             }
@@ -5294,7 +2675,7 @@ namespace SAEKZ.AmadeusTest {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
-    public partial class VerificationTypePersonName : PersonNameType {
+    public partial class VerificationTypePersonName : PersonNameType1 {
         
         private bool partialNameField;
         
@@ -5328,8 +2709,8 @@ namespace SAEKZ.AmadeusTest {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
-    public partial class PersonNameType {
+    [System.Xml.Serialization.XmlTypeAttribute(TypeName="PersonNameType", Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
+    public partial class PersonNameType1 {
         
         private string[] namePrefixField;
         
@@ -5560,14 +2941,14 @@ namespace SAEKZ.AmadeusTest {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
-    public partial class PaymentCardType {
+    [System.Xml.Serialization.XmlTypeAttribute(TypeName="PaymentCardType", Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
+    public partial class PaymentCardType1 {
         
         private string cardHolderNameField;
         
-        private PaymentCardTypeCardIssuerName cardIssuerNameField;
+        private PaymentCardTypeCardIssuerName1 cardIssuerNameField;
         
-        private AddressType addressField;
+        private AddressType2 addressField;
         
         private PaymentCardTypeTelephone[] telephoneField;
         
@@ -5632,7 +3013,7 @@ namespace SAEKZ.AmadeusTest {
         }
         
         /// <remarks/>
-        public PaymentCardTypeCardIssuerName CardIssuerName {
+        public PaymentCardTypeCardIssuerName1 CardIssuerName {
             get {
                 return this.cardIssuerNameField;
             }
@@ -5642,7 +3023,7 @@ namespace SAEKZ.AmadeusTest {
         }
         
         /// <remarks/>
-        public AddressType Address {
+        public AddressType2 Address {
             get {
                 return this.addressField;
             }
@@ -5942,7 +3323,7 @@ namespace SAEKZ.AmadeusTest {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
-    public partial class PaymentCardTypeCardIssuerName {
+    public partial class PaymentCardTypeCardIssuerName1 {
         
         private string bankIDField;
         
@@ -5964,10 +3345,10 @@ namespace SAEKZ.AmadeusTest {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
-    public partial class AddressType {
+    [System.Xml.Serialization.XmlTypeAttribute(TypeName="AddressType", Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
+    public partial class AddressType2 {
         
-        private AddressTypeStreetNmbr streetNmbrField;
+        private AddressTypeStreetNmbr1 streetNmbrField;
         
         private AddressTypeBldgRoom[] bldgRoomField;
         
@@ -5979,9 +3360,9 @@ namespace SAEKZ.AmadeusTest {
         
         private string countyField;
         
-        private StateProvType stateProvField;
+        private StateProvType1 stateProvField;
         
-        private CountryNameType countryNameField;
+        private CountryNameType1 countryNameField;
         
         private bool formattedIndField;
         
@@ -6000,7 +3381,7 @@ namespace SAEKZ.AmadeusTest {
         private string remarkField;
         
         /// <remarks/>
-        public AddressTypeStreetNmbr StreetNmbr {
+        public AddressTypeStreetNmbr1 StreetNmbr {
             get {
                 return this.streetNmbrField;
             }
@@ -6062,7 +3443,7 @@ namespace SAEKZ.AmadeusTest {
         }
         
         /// <remarks/>
-        public StateProvType StateProv {
+        public StateProvType1 StateProv {
             get {
                 return this.stateProvField;
             }
@@ -6072,7 +3453,7 @@ namespace SAEKZ.AmadeusTest {
         }
         
         /// <remarks/>
-        public CountryNameType CountryName {
+        public CountryNameType1 CountryName {
             get {
                 return this.countryNameField;
             }
@@ -6176,7 +3557,7 @@ namespace SAEKZ.AmadeusTest {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
-    public partial class AddressTypeStreetNmbr : StreetNmbrType {
+    public partial class AddressTypeStreetNmbr1 : StreetNmbrType {
         
         private string streetNmbrSuffixField;
         
@@ -6306,8 +3687,8 @@ namespace SAEKZ.AmadeusTest {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
-    public partial class StateProvType {
+    [System.Xml.Serialization.XmlTypeAttribute(TypeName="StateProvType", Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
+    public partial class StateProvType1 {
         
         private string stateCodeField;
         
@@ -6341,8 +3722,8 @@ namespace SAEKZ.AmadeusTest {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
-    public partial class CountryNameType {
+    [System.Xml.Serialization.XmlTypeAttribute(TypeName="CountryNameType", Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
+    public partial class CountryNameType1 {
         
         private string codeField;
         
@@ -6377,7 +3758,7 @@ namespace SAEKZ.AmadeusTest {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
-    public partial class AddressInfoType : AddressType {
+    public partial class AddressInfoType : AddressType2 {
         
         private bool defaultIndField;
         
@@ -12253,14 +9634,14 @@ namespace SAEKZ.AmadeusTest {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
-    public partial class SourceType {
+    [System.Xml.Serialization.XmlTypeAttribute(TypeName="SourceType", Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
+    public partial class SourceType1 {
         
-        private SourceTypeRequestorID requestorIDField;
+        private SourceTypeRequestorID1 requestorIDField;
         
-        private SourceTypePosition positionField;
+        private SourceTypePosition1 positionField;
         
-        private SourceTypeBookingChannel bookingChannelField;
+        private SourceTypeBookingChannel1 bookingChannelField;
         
         private string agentSineField;
         
@@ -12283,7 +9664,7 @@ namespace SAEKZ.AmadeusTest {
         private string terminalIDField;
         
         /// <remarks/>
-        public SourceTypeRequestorID RequestorID {
+        public SourceTypeRequestorID1 RequestorID {
             get {
                 return this.requestorIDField;
             }
@@ -12293,7 +9674,7 @@ namespace SAEKZ.AmadeusTest {
         }
         
         /// <remarks/>
-        public SourceTypePosition Position {
+        public SourceTypePosition1 Position {
             get {
                 return this.positionField;
             }
@@ -12303,7 +9684,7 @@ namespace SAEKZ.AmadeusTest {
         }
         
         /// <remarks/>
-        public SourceTypeBookingChannel BookingChannel {
+        public SourceTypeBookingChannel1 BookingChannel {
             get {
                 return this.bookingChannelField;
             }
@@ -12429,7 +9810,7 @@ namespace SAEKZ.AmadeusTest {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
-    public partial class SourceTypeRequestorID : UniqueID_Type1 {
+    public partial class SourceTypeRequestorID1 : UniqueID_Type1 {
         
         private string messagePasswordField;
         
@@ -12524,7 +9905,7 @@ namespace SAEKZ.AmadeusTest {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
-    public partial class SourceTypePosition {
+    public partial class SourceTypePosition1 {
         
         private string latitudeField;
         
@@ -12598,7 +9979,7 @@ namespace SAEKZ.AmadeusTest {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
-    public partial class SourceTypeBookingChannel {
+    public partial class SourceTypeBookingChannel1 {
         
         private CompanyNameType1 companyNameField;
         
@@ -12963,14 +10344,14 @@ namespace SAEKZ.AmadeusTest {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
-    public partial class WarningsType {
+    [System.Xml.Serialization.XmlTypeAttribute(TypeName="WarningsType", Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
+    public partial class WarningsType1 {
         
-        private WarningType[] warningField;
+        private WarningType1[] warningField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("Warning")]
-        public WarningType[] Warning {
+        public WarningType1[] Warning {
             get {
                 return this.warningField;
             }
@@ -13023,9 +10404,9 @@ namespace SAEKZ.AmadeusTest {
         private string correlationIDField;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("Errors", typeof(ErrorsType))]
-        [System.Xml.Serialization.XmlElementAttribute("Success", typeof(SuccessType))]
-        [System.Xml.Serialization.XmlElementAttribute("Warnings", typeof(WarningsType))]
+        [System.Xml.Serialization.XmlElementAttribute("Errors", typeof(ErrorsType1))]
+        [System.Xml.Serialization.XmlElementAttribute("Success", typeof(SuccessType1))]
+        [System.Xml.Serialization.XmlElementAttribute("Warnings", typeof(WarningsType1))]
         public object[] Items {
             get {
                 return this.itemsField;
@@ -13215,14 +10596,14 @@ namespace SAEKZ.AmadeusTest {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
-    public partial class ErrorsType {
+    [System.Xml.Serialization.XmlTypeAttribute(TypeName="ErrorsType", Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
+    public partial class ErrorsType1 {
         
-        private ErrorType[] errorField;
+        private ErrorType1[] errorField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("Error")]
-        public ErrorType[] Error {
+        public ErrorType1[] Error {
             get {
                 return this.errorField;
             }
@@ -13242,9 +10623,9 @@ namespace SAEKZ.AmadeusTest {
         
         private string cityNameField;
         
-        private StateProvType stateProvField;
+        private StateProvType1 stateProvField;
         
-        private CountryNameType countryNameField;
+        private CountryNameType1 countryNameField;
         
         /// <remarks/>
         public string CityName {
@@ -13257,7 +10638,7 @@ namespace SAEKZ.AmadeusTest {
         }
         
         /// <remarks/>
-        public StateProvType StateProv {
+        public StateProvType1 StateProv {
             get {
                 return this.stateProvField;
             }
@@ -13267,7 +10648,7 @@ namespace SAEKZ.AmadeusTest {
         }
         
         /// <remarks/>
-        public CountryNameType CountryName {
+        public CountryNameType1 CountryName {
             get {
                 return this.countryNameField;
             }
@@ -13529,7 +10910,7 @@ namespace SAEKZ.AmadeusTest {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
-    public partial class ItemSearchCriterionTypeAddress : AddressType {
+    public partial class ItemSearchCriterionTypeAddress : AddressType2 {
         
         private bool sameCountryIndField;
         
@@ -14094,8 +11475,8 @@ namespace SAEKZ.AmadeusTest {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
-    public partial class EquipmentType {
+    [System.Xml.Serialization.XmlTypeAttribute(TypeName="EquipmentType", Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
+    public partial class EquipmentType1 {
         
         private string airEquipTypeField;
         
@@ -14155,16 +11536,16 @@ namespace SAEKZ.AmadeusTest {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
-    public partial class FlightSegmentBaseType {
+    [System.Xml.Serialization.XmlTypeAttribute(TypeName="FlightSegmentBaseType", Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
+    public partial class FlightSegmentBaseType1 {
         
-        private FlightSegmentBaseTypeDepartureAirport departureAirportField;
+        private FlightSegmentBaseTypeDepartureAirport1 departureAirportField;
         
-        private FlightSegmentBaseTypeArrivalAirport arrivalAirportField;
+        private FlightSegmentBaseTypeArrivalAirport1 arrivalAirportField;
         
         private OperatingAirlineType1 operatingAirlineField;
         
-        private EquipmentType[] equipmentField;
+        private EquipmentType1[] equipmentField;
         
         private System.DateTime departureDateTimeField;
         
@@ -14181,7 +11562,7 @@ namespace SAEKZ.AmadeusTest {
         private string infoSourceField;
         
         /// <remarks/>
-        public FlightSegmentBaseTypeDepartureAirport DepartureAirport {
+        public FlightSegmentBaseTypeDepartureAirport1 DepartureAirport {
             get {
                 return this.departureAirportField;
             }
@@ -14191,7 +11572,7 @@ namespace SAEKZ.AmadeusTest {
         }
         
         /// <remarks/>
-        public FlightSegmentBaseTypeArrivalAirport ArrivalAirport {
+        public FlightSegmentBaseTypeArrivalAirport1 ArrivalAirport {
             get {
                 return this.arrivalAirportField;
             }
@@ -14212,7 +11593,7 @@ namespace SAEKZ.AmadeusTest {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("Equipment")]
-        public EquipmentType[] Equipment {
+        public EquipmentType1[] Equipment {
             get {
                 return this.equipmentField;
             }
@@ -14305,7 +11686,7 @@ namespace SAEKZ.AmadeusTest {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
-    public partial class FlightSegmentBaseTypeDepartureAirport {
+    public partial class FlightSegmentBaseTypeDepartureAirport1 {
         
         private string locationCodeField;
         
@@ -14366,7 +11747,7 @@ namespace SAEKZ.AmadeusTest {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
-    public partial class FlightSegmentBaseTypeArrivalAirport {
+    public partial class FlightSegmentBaseTypeArrivalAirport1 {
         
         private string locationCodeField;
         
@@ -14611,7 +11992,7 @@ namespace SAEKZ.AmadeusTest {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
-    public partial class DonationTypeCreditCardInfo : PaymentCardType {
+    public partial class DonationTypeCreditCardInfo : PaymentCardType1 {
         
         private string currencyField;
         
@@ -14679,7 +12060,7 @@ namespace SAEKZ.AmadeusTest {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
-    public partial class DonationTypeDonorInfoName : PersonNameType {
+    public partial class DonationTypeDonorInfoName : PersonNameType1 {
     }
     
     /// <remarks/>
@@ -14688,7 +12069,7 @@ namespace SAEKZ.AmadeusTest {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
-    public partial class DonationTypeDonorInfoContactInfo : AddressType {
+    public partial class DonationTypeDonorInfoContactInfo : AddressType2 {
         
         private string emailAddressField;
         
@@ -14814,7 +12195,7 @@ namespace SAEKZ.AmadeusTest {
         private string postalCodeField;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("DocHolderFormattedName", typeof(PersonNameType))]
+        [System.Xml.Serialization.XmlElementAttribute("DocHolderFormattedName", typeof(PersonNameType1))]
         [System.Xml.Serialization.XmlElementAttribute("DocHolderName", typeof(string))]
         public object Item {
             get {
@@ -15195,7 +12576,7 @@ namespace SAEKZ.AmadeusTest {
         
         private UniqueID_Type1 uniqueIDField;
         
-        private PersonNameType personNameField;
+        private PersonNameType1 personNameField;
         
         private AddressTypeShareSynchInd shareSynchIndField;
         
@@ -15222,7 +12603,7 @@ namespace SAEKZ.AmadeusTest {
         }
         
         /// <remarks/>
-        public PersonNameType PersonName {
+        public PersonNameType1 PersonName {
             get {
                 return this.personNameField;
             }
@@ -15317,7 +12698,7 @@ namespace SAEKZ.AmadeusTest {
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
     public partial class CustomerType {
         
-        private PersonNameType[] personNameField;
+        private PersonNameType1[] personNameField;
         
         private CustomerTypeTelephone[] telephoneField;
         
@@ -15391,7 +12772,7 @@ namespace SAEKZ.AmadeusTest {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("PersonName")]
-        public PersonNameType[] PersonName {
+        public PersonNameType1[] PersonName {
             get {
                 return this.personNameField;
             }
@@ -15997,7 +13378,7 @@ namespace SAEKZ.AmadeusTest {
         
         private CompanyNameType1 companyNameField;
         
-        private PersonNameType addresseeNameField;
+        private PersonNameType1 addresseeNameField;
         
         private System.DateTime effectiveDateField;
         
@@ -16032,7 +13413,7 @@ namespace SAEKZ.AmadeusTest {
         }
         
         /// <remarks/>
-        public PersonNameType AddresseeName {
+        public PersonNameType1 AddresseeName {
             get {
                 return this.addresseeNameField;
             }
@@ -16403,7 +13784,7 @@ namespace SAEKZ.AmadeusTest {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
-    public partial class CustomerTypePaymentForm : PaymentFormType {
+    public partial class CustomerTypePaymentForm : PaymentFormType1 {
         
         private CustomerTypePaymentFormAssociatedSupplier associatedSupplierField;
         
@@ -16545,13 +13926,13 @@ namespace SAEKZ.AmadeusTest {
     }
     
     /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PaymentDetailType))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PaymentDetailType1))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
-    public partial class PaymentFormType {
+    [System.Xml.Serialization.XmlTypeAttribute(TypeName="PaymentFormType", Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
+    public partial class PaymentFormType1 {
         
         private object itemField;
         
@@ -16567,7 +13948,7 @@ namespace SAEKZ.AmadeusTest {
         
         private string rPHField;
         
-        private PaymentFormTypePaymentTransactionTypeCode paymentTransactionTypeCodeField;
+        private PaymentFormTypePaymentTransactionTypeCode1 paymentTransactionTypeCodeField;
         
         private bool paymentTransactionTypeCodeFieldSpecified;
         
@@ -16582,14 +13963,14 @@ namespace SAEKZ.AmadeusTest {
         private string remarkField;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("BankAcct", typeof(BankAcctType))]
-        [System.Xml.Serialization.XmlElementAttribute("Cash", typeof(PaymentFormTypeCash))]
-        [System.Xml.Serialization.XmlElementAttribute("DirectBill", typeof(DirectBillType))]
-        [System.Xml.Serialization.XmlElementAttribute("LoyaltyRedemption", typeof(PaymentFormTypeLoyaltyRedemption))]
-        [System.Xml.Serialization.XmlElementAttribute("MiscChargeOrder", typeof(PaymentFormTypeMiscChargeOrder))]
-        [System.Xml.Serialization.XmlElementAttribute("PaymentCard", typeof(PaymentCardType))]
+        [System.Xml.Serialization.XmlElementAttribute("BankAcct", typeof(BankAcctType1))]
+        [System.Xml.Serialization.XmlElementAttribute("Cash", typeof(PaymentFormTypeCash1))]
+        [System.Xml.Serialization.XmlElementAttribute("DirectBill", typeof(DirectBillType1))]
+        [System.Xml.Serialization.XmlElementAttribute("LoyaltyRedemption", typeof(PaymentFormTypeLoyaltyRedemption1))]
+        [System.Xml.Serialization.XmlElementAttribute("MiscChargeOrder", typeof(PaymentFormTypeMiscChargeOrder1))]
+        [System.Xml.Serialization.XmlElementAttribute("PaymentCard", typeof(PaymentCardType1))]
         [System.Xml.Serialization.XmlElementAttribute("Ticket", typeof(PaymentFormTypeTicket))]
-        [System.Xml.Serialization.XmlElementAttribute("Voucher", typeof(PaymentFormTypeVoucher))]
+        [System.Xml.Serialization.XmlElementAttribute("Voucher", typeof(PaymentFormTypeVoucher1))]
         public object Item {
             get {
                 return this.itemField;
@@ -16667,7 +14048,7 @@ namespace SAEKZ.AmadeusTest {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public PaymentFormTypePaymentTransactionTypeCode PaymentTransactionTypeCode {
+        public PaymentFormTypePaymentTransactionTypeCode1 PaymentTransactionTypeCode {
             get {
                 return this.paymentTransactionTypeCodeField;
             }
@@ -16748,8 +14129,8 @@ namespace SAEKZ.AmadeusTest {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
-    public partial class BankAcctType {
+    [System.Xml.Serialization.XmlTypeAttribute(TypeName="BankAcctType", Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
+    public partial class BankAcctType1 {
         
         private string bankAcctNameField;
         
@@ -16900,7 +14281,7 @@ namespace SAEKZ.AmadeusTest {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
-    public partial class PaymentFormTypeCash {
+    public partial class PaymentFormTypeCash1 {
         
         private bool cashIndicatorField;
         
@@ -16934,10 +14315,10 @@ namespace SAEKZ.AmadeusTest {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
-    public partial class DirectBillType {
+    [System.Xml.Serialization.XmlTypeAttribute(TypeName="DirectBillType", Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
+    public partial class DirectBillType1 {
         
-        private DirectBillTypeCompanyName companyNameField;
+        private DirectBillTypeCompanyName1 companyNameField;
         
         private AddressInfoType addressField;
         
@@ -16958,7 +14339,7 @@ namespace SAEKZ.AmadeusTest {
         private string billingNumberField;
         
         /// <remarks/>
-        public DirectBillTypeCompanyName CompanyName {
+        public DirectBillTypeCompanyName1 CompanyName {
             get {
                 return this.companyNameField;
             }
@@ -17070,7 +14451,7 @@ namespace SAEKZ.AmadeusTest {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
-    public partial class DirectBillTypeCompanyName : CompanyNameType1 {
+    public partial class DirectBillTypeCompanyName1 : CompanyNameType1 {
         
         private string contactNameField;
         
@@ -17114,7 +14495,7 @@ namespace SAEKZ.AmadeusTest {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
-    public partial class PaymentFormTypeLoyaltyRedemption {
+    public partial class PaymentFormTypeLoyaltyRedemption1 {
         
         private PaymentFormTypeLoyaltyRedemptionLoyaltyCertificate[] loyaltyCertificateField;
         
@@ -17301,7 +14682,7 @@ namespace SAEKZ.AmadeusTest {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
-    public partial class PaymentFormTypeMiscChargeOrder {
+    public partial class PaymentFormTypeMiscChargeOrder1 {
         
         private string ticketNumberField;
         
@@ -17721,7 +15102,7 @@ namespace SAEKZ.AmadeusTest {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
-    public partial class PaymentFormTypeVoucher {
+    public partial class PaymentFormTypeVoucher1 {
         
         private string seriesCodeField;
         
@@ -17819,7 +15200,7 @@ namespace SAEKZ.AmadeusTest {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
-    public enum PaymentFormTypePaymentTransactionTypeCode {
+    public enum PaymentFormTypePaymentTransactionTypeCode1 {
         
         /// <remarks/>
         charge,
@@ -17836,10 +15217,10 @@ namespace SAEKZ.AmadeusTest {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
-    public partial class PaymentDetailType : PaymentFormType {
+    [System.Xml.Serialization.XmlTypeAttribute(TypeName="PaymentDetailType", Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
+    public partial class PaymentDetailType1 : PaymentFormType1 {
         
-        private PaymentDetailTypePaymentAmount[] paymentAmountField;
+        private PaymentDetailTypePaymentAmount1[] paymentAmountField;
         
         private CommissionType commissionField;
         
@@ -17857,7 +15238,7 @@ namespace SAEKZ.AmadeusTest {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("PaymentAmount")]
-        public PaymentDetailTypePaymentAmount[] PaymentAmount {
+        public PaymentDetailTypePaymentAmount1[] PaymentAmount {
             get {
                 return this.paymentAmountField;
             }
@@ -17949,7 +15330,7 @@ namespace SAEKZ.AmadeusTest {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
-    public partial class PaymentDetailTypePaymentAmount {
+    public partial class PaymentDetailTypePaymentAmount1 {
         
         private decimal amountField;
         
@@ -18429,7 +15810,7 @@ namespace SAEKZ.AmadeusTest {
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
     public partial class ContactPersonType {
         
-        private PersonNameType personNameField;
+        private PersonNameType1 personNameField;
         
         private ContactPersonTypeTelephone[] telephoneField;
         
@@ -18470,7 +15851,7 @@ namespace SAEKZ.AmadeusTest {
         private string documentDistribMethodCodeField;
         
         /// <remarks/>
-        public PersonNameType PersonName {
+        public PersonNameType1 PersonName {
             get {
                 return this.personNameField;
             }
@@ -19097,7 +16478,7 @@ namespace SAEKZ.AmadeusTest {
         
         private CompanyNameType1 companyNameField;
         
-        private PersonNameType nameField;
+        private PersonNameType1 nameField;
         
         private string memberIDField;
         
@@ -19112,7 +16493,7 @@ namespace SAEKZ.AmadeusTest {
         }
         
         /// <remarks/>
-        public PersonNameType Name {
+        public PersonNameType1 Name {
             get {
                 return this.nameField;
             }
@@ -19438,7 +16819,7 @@ namespace SAEKZ.AmadeusTest {
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.opentravel.org/OTA/2003/05/OTA2010B")]
     public partial class CancelRuleType {
         
-        private PaymentCardType paymentCardField;
+        private PaymentCardType1 paymentCardField;
         
         private string cancelByDateField;
         
@@ -19455,7 +16836,7 @@ namespace SAEKZ.AmadeusTest {
         private bool typeFieldSpecified;
         
         /// <remarks/>
-        public PaymentCardType PaymentCard {
+        public PaymentCardType1 PaymentCard {
             get {
                 return this.paymentCardField;
             }
@@ -19602,7 +16983,7 @@ namespace SAEKZ.AmadeusTest {
         
         private UniqueID_Type1[] uniqueIDField;
         
-        private PersonNameType personNameField;
+        private PersonNameType1 personNameField;
         
         private TransactionActionType cancelTypeField;
         
@@ -19618,7 +16999,7 @@ namespace SAEKZ.AmadeusTest {
         }
         
         /// <remarks/>
-        public PersonNameType PersonName {
+        public PersonNameType1 PersonName {
             get {
                 return this.personNameField;
             }
@@ -20143,6 +17524,2625 @@ namespace SAEKZ.AmadeusTest {
                 this.usageAmountFieldSpecified = value;
             }
         }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FTP_TypeWithLayoutType))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://xml.amadeus.com/2010/06/AppMdw_CommonTypes_v3")]
+    public partial class FTP_Type {
+        
+        private string filenameField;
+        
+        private string pathField;
+        
+        private string fileHashField;
+        
+        private string fTPIDField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Filename {
+            get {
+                return this.filenameField;
+            }
+            set {
+                this.filenameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Path {
+            get {
+                return this.pathField;
+            }
+            set {
+                this.pathField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string FileHash {
+            get {
+                return this.fileHashField;
+            }
+            set {
+                this.fileHashField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string FTPID {
+            get {
+                return this.fTPIDField;
+            }
+            set {
+                this.fTPIDField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://xml.amadeus.com/2010/06/AppMdw_CommonTypes_v3")]
+    public partial class FTP_TypeWithLayoutType : FTP_Type {
+        
+        private string layoutTypeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string LayoutType {
+            get {
+                return this.layoutTypeField;
+            }
+            set {
+                this.layoutTypeField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://xml.amadeus.com/2010/06/AppMdw_CommonTypes_v3")]
+    public partial class TextType {
+        
+        private string encodingField;
+        
+        private string valueField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Encoding {
+            get {
+                return this.encodingField;
+            }
+            set {
+                this.encodingField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Value {
+            get {
+                return this.valueField;
+            }
+            set {
+                this.valueField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://xml.amadeus.com/2010/06/AppMdw_CommonTypes_v3")]
+    public partial class OwnershipType {
+        
+        private string organizationCodeField;
+        
+        private string applicationLabelField;
+        
+        private string companyCodeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string OrganizationCode {
+            get {
+                return this.organizationCodeField;
+            }
+            set {
+                this.organizationCodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ApplicationLabel {
+            get {
+                return this.applicationLabelField;
+            }
+            set {
+                this.applicationLabelField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string CompanyCode {
+            get {
+                return this.companyCodeField;
+            }
+            set {
+                this.companyCodeField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(AddressWithModeType))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(TypeName="AddressType", Namespace="http://xml.amadeus.com/2010/06/AppMdw_CommonTypes_v3")]
+    public partial class AddressType1 {
+        
+        private string formatField;
+        
+        private string valueField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Format {
+            get {
+                return this.formatField;
+            }
+            set {
+                this.formatField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Value {
+            get {
+                return this.valueField;
+            }
+            set {
+                this.valueField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://xml.amadeus.com/2010/06/AppMdw_CommonTypes_v3")]
+    public partial class AddressWithModeType : AddressType1 {
+        
+        private string modeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Mode {
+            get {
+                return this.modeField;
+            }
+            set {
+                this.modeField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
+    public partial class SuccessType {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
+    public partial class SourceType {
+        
+        private SourceTypeRequestorID requestorIDField;
+        
+        private SourceTypePosition positionField;
+        
+        private SourceTypeBookingChannel bookingChannelField;
+        
+        private string agentSineField;
+        
+        private string pseudoCityCodeField;
+        
+        private string iSOCountryField;
+        
+        private string iSOCurrencyField;
+        
+        private string agentDutyCodeField;
+        
+        private string airlineVendorIDField;
+        
+        private string airportCodeField;
+        
+        private string firstDepartPointField;
+        
+        private string eRSP_UserIDField;
+        
+        private string terminalIDField;
+        
+        /// <remarks/>
+        public SourceTypeRequestorID RequestorID {
+            get {
+                return this.requestorIDField;
+            }
+            set {
+                this.requestorIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public SourceTypePosition Position {
+            get {
+                return this.positionField;
+            }
+            set {
+                this.positionField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public SourceTypeBookingChannel BookingChannel {
+            get {
+                return this.bookingChannelField;
+            }
+            set {
+                this.bookingChannelField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string AgentSine {
+            get {
+                return this.agentSineField;
+            }
+            set {
+                this.agentSineField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string PseudoCityCode {
+            get {
+                return this.pseudoCityCodeField;
+            }
+            set {
+                this.pseudoCityCodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ISOCountry {
+            get {
+                return this.iSOCountryField;
+            }
+            set {
+                this.iSOCountryField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ISOCurrency {
+            get {
+                return this.iSOCurrencyField;
+            }
+            set {
+                this.iSOCurrencyField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string AgentDutyCode {
+            get {
+                return this.agentDutyCodeField;
+            }
+            set {
+                this.agentDutyCodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string AirlineVendorID {
+            get {
+                return this.airlineVendorIDField;
+            }
+            set {
+                this.airlineVendorIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string AirportCode {
+            get {
+                return this.airportCodeField;
+            }
+            set {
+                this.airportCodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string FirstDepartPoint {
+            get {
+                return this.firstDepartPointField;
+            }
+            set {
+                this.firstDepartPointField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ERSP_UserID {
+            get {
+                return this.eRSP_UserIDField;
+            }
+            set {
+                this.eRSP_UserIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string TerminalID {
+            get {
+                return this.terminalIDField;
+            }
+            set {
+                this.terminalIDField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
+    public partial class SourceTypeRequestorID : UniqueID_Type {
+        
+        private string messagePasswordField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string MessagePassword {
+            get {
+                return this.messagePasswordField;
+            }
+            set {
+                this.messagePasswordField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
+    public partial class SourceTypePosition {
+        
+        private string latitudeField;
+        
+        private string longitudeField;
+        
+        private string altitudeField;
+        
+        private string altitudeUnitOfMeasureCodeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Latitude {
+            get {
+                return this.latitudeField;
+            }
+            set {
+                this.latitudeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Longitude {
+            get {
+                return this.longitudeField;
+            }
+            set {
+                this.longitudeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Altitude {
+            get {
+                return this.altitudeField;
+            }
+            set {
+                this.altitudeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string AltitudeUnitOfMeasureCode {
+            get {
+                return this.altitudeUnitOfMeasureCodeField;
+            }
+            set {
+                this.altitudeUnitOfMeasureCodeField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
+    public partial class SourceTypeBookingChannel {
+        
+        private CompanyNameType companyNameField;
+        
+        private string typeField;
+        
+        private bool primaryField;
+        
+        private bool primaryFieldSpecified;
+        
+        /// <remarks/>
+        public CompanyNameType CompanyName {
+            get {
+                return this.companyNameField;
+            }
+            set {
+                this.companyNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Type {
+            get {
+                return this.typeField;
+            }
+            set {
+                this.typeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public bool Primary {
+            get {
+                return this.primaryField;
+            }
+            set {
+                this.primaryField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool PrimarySpecified {
+            get {
+                return this.primaryFieldSpecified;
+            }
+            set {
+                this.primaryFieldSpecified = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
+    public partial class PersonNameType {
+        
+        private string[] namePrefixField;
+        
+        private string[] givenNameField;
+        
+        private string[] middleNameField;
+        
+        private string surnamePrefixField;
+        
+        private string surnameField;
+        
+        private string[] nameSuffixField;
+        
+        private string[] nameTitleField;
+        
+        private BankAcctTypeShareSynchInd shareSynchIndField;
+        
+        private bool shareSynchIndFieldSpecified;
+        
+        private BankAcctTypeShareMarketInd shareMarketIndField;
+        
+        private bool shareMarketIndFieldSpecified;
+        
+        private string nameTypeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("NamePrefix")]
+        public string[] NamePrefix {
+            get {
+                return this.namePrefixField;
+            }
+            set {
+                this.namePrefixField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("GivenName")]
+        public string[] GivenName {
+            get {
+                return this.givenNameField;
+            }
+            set {
+                this.givenNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("MiddleName")]
+        public string[] MiddleName {
+            get {
+                return this.middleNameField;
+            }
+            set {
+                this.middleNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string SurnamePrefix {
+            get {
+                return this.surnamePrefixField;
+            }
+            set {
+                this.surnamePrefixField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Surname {
+            get {
+                return this.surnameField;
+            }
+            set {
+                this.surnameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("NameSuffix")]
+        public string[] NameSuffix {
+            get {
+                return this.nameSuffixField;
+            }
+            set {
+                this.nameSuffixField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("NameTitle")]
+        public string[] NameTitle {
+            get {
+                return this.nameTitleField;
+            }
+            set {
+                this.nameTitleField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public BankAcctTypeShareSynchInd ShareSynchInd {
+            get {
+                return this.shareSynchIndField;
+            }
+            set {
+                this.shareSynchIndField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool ShareSynchIndSpecified {
+            get {
+                return this.shareSynchIndFieldSpecified;
+            }
+            set {
+                this.shareSynchIndFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public BankAcctTypeShareMarketInd ShareMarketInd {
+            get {
+                return this.shareMarketIndField;
+            }
+            set {
+                this.shareMarketIndField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool ShareMarketIndSpecified {
+            get {
+                return this.shareMarketIndFieldSpecified;
+            }
+            set {
+                this.shareMarketIndFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string NameType {
+            get {
+                return this.nameTypeField;
+            }
+            set {
+                this.nameTypeField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
+    public enum BankAcctTypeShareSynchInd {
+        
+        /// <remarks/>
+        Yes,
+        
+        /// <remarks/>
+        No,
+        
+        /// <remarks/>
+        Inherit,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
+    public enum BankAcctTypeShareMarketInd {
+        
+        /// <remarks/>
+        Yes,
+        
+        /// <remarks/>
+        No,
+        
+        /// <remarks/>
+        Inherit,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
+    public partial class PaymentCardType {
+        
+        private string cardHolderNameField;
+        
+        private PaymentCardTypeCardIssuerName cardIssuerNameField;
+        
+        private PaymentCardTypeAddress addressField;
+        
+        private PaymentCardTypeCustomerFileRef customerFileRefField;
+        
+        private BankAcctTypeShareSynchInd shareSynchIndField;
+        
+        private bool shareSynchIndFieldSpecified;
+        
+        private BankAcctTypeShareMarketInd shareMarketIndField;
+        
+        private bool shareMarketIndFieldSpecified;
+        
+        private string cardTypeField;
+        
+        private string cardCodeField;
+        
+        private string cardNumberField;
+        
+        private string seriesCodeField;
+        
+        private string effectiveDateField;
+        
+        private string expireDateField;
+        
+        private string maskedCardNumberField;
+        
+        private string cardHolderRPHField;
+        
+        private string addressValidationField;
+        
+        private string approvalCodeField;
+        
+        private string corporateContractCodeField;
+        
+        private string textField;
+        
+        private string extendedPaymentCodeField;
+        
+        private string approvalTypeField;
+        
+        private decimal amountField;
+        
+        private bool amountFieldSpecified;
+        
+        /// <remarks/>
+        public string CardHolderName {
+            get {
+                return this.cardHolderNameField;
+            }
+            set {
+                this.cardHolderNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public PaymentCardTypeCardIssuerName CardIssuerName {
+            get {
+                return this.cardIssuerNameField;
+            }
+            set {
+                this.cardIssuerNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public PaymentCardTypeAddress Address {
+            get {
+                return this.addressField;
+            }
+            set {
+                this.addressField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public PaymentCardTypeCustomerFileRef CustomerFileRef {
+            get {
+                return this.customerFileRefField;
+            }
+            set {
+                this.customerFileRefField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public BankAcctTypeShareSynchInd ShareSynchInd {
+            get {
+                return this.shareSynchIndField;
+            }
+            set {
+                this.shareSynchIndField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool ShareSynchIndSpecified {
+            get {
+                return this.shareSynchIndFieldSpecified;
+            }
+            set {
+                this.shareSynchIndFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public BankAcctTypeShareMarketInd ShareMarketInd {
+            get {
+                return this.shareMarketIndField;
+            }
+            set {
+                this.shareMarketIndField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool ShareMarketIndSpecified {
+            get {
+                return this.shareMarketIndFieldSpecified;
+            }
+            set {
+                this.shareMarketIndFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string CardType {
+            get {
+                return this.cardTypeField;
+            }
+            set {
+                this.cardTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string CardCode {
+            get {
+                return this.cardCodeField;
+            }
+            set {
+                this.cardCodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string CardNumber {
+            get {
+                return this.cardNumberField;
+            }
+            set {
+                this.cardNumberField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string SeriesCode {
+            get {
+                return this.seriesCodeField;
+            }
+            set {
+                this.seriesCodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string EffectiveDate {
+            get {
+                return this.effectiveDateField;
+            }
+            set {
+                this.effectiveDateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ExpireDate {
+            get {
+                return this.expireDateField;
+            }
+            set {
+                this.expireDateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string MaskedCardNumber {
+            get {
+                return this.maskedCardNumberField;
+            }
+            set {
+                this.maskedCardNumberField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string CardHolderRPH {
+            get {
+                return this.cardHolderRPHField;
+            }
+            set {
+                this.cardHolderRPHField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string AddressValidation {
+            get {
+                return this.addressValidationField;
+            }
+            set {
+                this.addressValidationField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ApprovalCode {
+            get {
+                return this.approvalCodeField;
+            }
+            set {
+                this.approvalCodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string CorporateContractCode {
+            get {
+                return this.corporateContractCodeField;
+            }
+            set {
+                this.corporateContractCodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Text {
+            get {
+                return this.textField;
+            }
+            set {
+                this.textField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ExtendedPaymentCode {
+            get {
+                return this.extendedPaymentCodeField;
+            }
+            set {
+                this.extendedPaymentCodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ApprovalType {
+            get {
+                return this.approvalTypeField;
+            }
+            set {
+                this.approvalTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public decimal Amount {
+            get {
+                return this.amountField;
+            }
+            set {
+                this.amountField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool AmountSpecified {
+            get {
+                return this.amountFieldSpecified;
+            }
+            set {
+                this.amountFieldSpecified = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
+    public partial class PaymentCardTypeCardIssuerName {
+        
+        private string bankIDField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string BankID {
+            get {
+                return this.bankIDField;
+            }
+            set {
+                this.bankIDField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
+    public partial class PaymentCardTypeAddress : AddressType {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
+    public partial class AddressType {
+        
+        private AddressTypeStreetNmbr streetNmbrField;
+        
+        private string bldgRoomField;
+        
+        private string[] addressLineField;
+        
+        private string cityNameField;
+        
+        private string postalCodeField;
+        
+        private string countyField;
+        
+        private StateProvType stateProvField;
+        
+        private CountryNameType countryNameField;
+        
+        private bool formattedIndField;
+        
+        private bool defaultIndField;
+        
+        private string useTypeField;
+        
+        private string rPHField;
+        
+        private string typeField;
+        
+        public AddressType() {
+            this.formattedIndField = false;
+            this.defaultIndField = false;
+        }
+        
+        /// <remarks/>
+        public AddressTypeStreetNmbr StreetNmbr {
+            get {
+                return this.streetNmbrField;
+            }
+            set {
+                this.streetNmbrField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string BldgRoom {
+            get {
+                return this.bldgRoomField;
+            }
+            set {
+                this.bldgRoomField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("AddressLine")]
+        public string[] AddressLine {
+            get {
+                return this.addressLineField;
+            }
+            set {
+                this.addressLineField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CityName {
+            get {
+                return this.cityNameField;
+            }
+            set {
+                this.cityNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string PostalCode {
+            get {
+                return this.postalCodeField;
+            }
+            set {
+                this.postalCodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string County {
+            get {
+                return this.countyField;
+            }
+            set {
+                this.countyField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public StateProvType StateProv {
+            get {
+                return this.stateProvField;
+            }
+            set {
+                this.stateProvField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public CountryNameType CountryName {
+            get {
+                return this.countryNameField;
+            }
+            set {
+                this.countryNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(false)]
+        public bool FormattedInd {
+            get {
+                return this.formattedIndField;
+            }
+            set {
+                this.formattedIndField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(false)]
+        public bool DefaultInd {
+            get {
+                return this.defaultIndField;
+            }
+            set {
+                this.defaultIndField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string UseType {
+            get {
+                return this.useTypeField;
+            }
+            set {
+                this.useTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string RPH {
+            get {
+                return this.rPHField;
+            }
+            set {
+                this.rPHField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Type {
+            get {
+                return this.typeField;
+            }
+            set {
+                this.typeField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
+    public partial class AddressTypeStreetNmbr {
+        
+        private string pOBoxField;
+        
+        private string streetNmbrSuffixField;
+        
+        private string streetDirectionField;
+        
+        private string ruralRouteNmbrField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string POBox {
+            get {
+                return this.pOBoxField;
+            }
+            set {
+                this.pOBoxField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string StreetNmbrSuffix {
+            get {
+                return this.streetNmbrSuffixField;
+            }
+            set {
+                this.streetNmbrSuffixField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string StreetDirection {
+            get {
+                return this.streetDirectionField;
+            }
+            set {
+                this.streetDirectionField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string RuralRouteNmbr {
+            get {
+                return this.ruralRouteNmbrField;
+            }
+            set {
+                this.ruralRouteNmbrField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
+    public partial class StateProvType {
+        
+        private string stateCodeField;
+        
+        private string valueField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string StateCode {
+            get {
+                return this.stateCodeField;
+            }
+            set {
+                this.stateCodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlTextAttribute()]
+        public string Value {
+            get {
+                return this.valueField;
+            }
+            set {
+                this.valueField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
+    public partial class CountryNameType {
+        
+        private string codeField;
+        
+        private string valueField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Code {
+            get {
+                return this.codeField;
+            }
+            set {
+                this.codeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlTextAttribute()]
+        public string Value {
+            get {
+                return this.valueField;
+            }
+            set {
+                this.valueField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
+    public partial class PaymentCardTypeCustomerFileRef {
+        
+        private string uRLField;
+        
+        private string typeField;
+        
+        private string instanceField;
+        
+        private string iD_ContextField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="anyURI")]
+        public string URL {
+            get {
+                return this.uRLField;
+            }
+            set {
+                this.uRLField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Type {
+            get {
+                return this.typeField;
+            }
+            set {
+                this.typeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Instance {
+            get {
+                return this.instanceField;
+            }
+            set {
+                this.instanceField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ID_Context {
+            get {
+                return this.iD_ContextField;
+            }
+            set {
+                this.iD_ContextField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PaymentDetailType))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
+    public partial class PaymentFormType {
+        
+        private object itemField;
+        
+        private BankAcctTypeShareSynchInd shareSynchIndField;
+        
+        private bool shareSynchIndFieldSpecified;
+        
+        private BankAcctTypeShareMarketInd shareMarketIndField;
+        
+        private bool shareMarketIndFieldSpecified;
+        
+        private string costCenterIDField;
+        
+        private string rPHField;
+        
+        private PaymentFormTypePaymentTransactionTypeCode paymentTransactionTypeCodeField;
+        
+        private bool paymentTransactionTypeCodeFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("BankAcct", typeof(BankAcctType))]
+        [System.Xml.Serialization.XmlElementAttribute("Cash", typeof(PaymentFormTypeCash))]
+        [System.Xml.Serialization.XmlElementAttribute("DirectBill", typeof(DirectBillType))]
+        [System.Xml.Serialization.XmlElementAttribute("LoyaltyRedemption", typeof(PaymentFormTypeLoyaltyRedemption))]
+        [System.Xml.Serialization.XmlElementAttribute("MiscChargeOrder", typeof(PaymentFormTypeMiscChargeOrder))]
+        [System.Xml.Serialization.XmlElementAttribute("Other", typeof(PaymentFormTypeOther))]
+        [System.Xml.Serialization.XmlElementAttribute("PaymentCard", typeof(PaymentCardType))]
+        [System.Xml.Serialization.XmlElementAttribute("Voucher", typeof(PaymentFormTypeVoucher))]
+        public object Item {
+            get {
+                return this.itemField;
+            }
+            set {
+                this.itemField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public BankAcctTypeShareSynchInd ShareSynchInd {
+            get {
+                return this.shareSynchIndField;
+            }
+            set {
+                this.shareSynchIndField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool ShareSynchIndSpecified {
+            get {
+                return this.shareSynchIndFieldSpecified;
+            }
+            set {
+                this.shareSynchIndFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public BankAcctTypeShareMarketInd ShareMarketInd {
+            get {
+                return this.shareMarketIndField;
+            }
+            set {
+                this.shareMarketIndField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool ShareMarketIndSpecified {
+            get {
+                return this.shareMarketIndFieldSpecified;
+            }
+            set {
+                this.shareMarketIndFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string CostCenterID {
+            get {
+                return this.costCenterIDField;
+            }
+            set {
+                this.costCenterIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string RPH {
+            get {
+                return this.rPHField;
+            }
+            set {
+                this.rPHField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public PaymentFormTypePaymentTransactionTypeCode PaymentTransactionTypeCode {
+            get {
+                return this.paymentTransactionTypeCodeField;
+            }
+            set {
+                this.paymentTransactionTypeCodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool PaymentTransactionTypeCodeSpecified {
+            get {
+                return this.paymentTransactionTypeCodeFieldSpecified;
+            }
+            set {
+                this.paymentTransactionTypeCodeFieldSpecified = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
+    public partial class BankAcctType {
+        
+        private string bankAcctNameField;
+        
+        private BankAcctTypeShareSynchInd shareSynchIndField;
+        
+        private bool shareSynchIndFieldSpecified;
+        
+        private BankAcctTypeShareMarketInd shareMarketIndField;
+        
+        private bool shareMarketIndFieldSpecified;
+        
+        private string bankIDField;
+        
+        private string acctTypeField;
+        
+        private string bankAcctNumberField;
+        
+        private bool checksAcceptedIndField;
+        
+        private bool checksAcceptedIndFieldSpecified;
+        
+        /// <remarks/>
+        public string BankAcctName {
+            get {
+                return this.bankAcctNameField;
+            }
+            set {
+                this.bankAcctNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public BankAcctTypeShareSynchInd ShareSynchInd {
+            get {
+                return this.shareSynchIndField;
+            }
+            set {
+                this.shareSynchIndField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool ShareSynchIndSpecified {
+            get {
+                return this.shareSynchIndFieldSpecified;
+            }
+            set {
+                this.shareSynchIndFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public BankAcctTypeShareMarketInd ShareMarketInd {
+            get {
+                return this.shareMarketIndField;
+            }
+            set {
+                this.shareMarketIndField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool ShareMarketIndSpecified {
+            get {
+                return this.shareMarketIndFieldSpecified;
+            }
+            set {
+                this.shareMarketIndFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string BankID {
+            get {
+                return this.bankIDField;
+            }
+            set {
+                this.bankIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string AcctType {
+            get {
+                return this.acctTypeField;
+            }
+            set {
+                this.acctTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string BankAcctNumber {
+            get {
+                return this.bankAcctNumberField;
+            }
+            set {
+                this.bankAcctNumberField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public bool ChecksAcceptedInd {
+            get {
+                return this.checksAcceptedIndField;
+            }
+            set {
+                this.checksAcceptedIndField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool ChecksAcceptedIndSpecified {
+            get {
+                return this.checksAcceptedIndFieldSpecified;
+            }
+            set {
+                this.checksAcceptedIndFieldSpecified = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
+    public partial class PaymentFormTypeCash {
+        
+        private bool cashIndicatorField;
+        
+        public PaymentFormTypeCash() {
+            this.cashIndicatorField = true;
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(true)]
+        public bool CashIndicator {
+            get {
+                return this.cashIndicatorField;
+            }
+            set {
+                this.cashIndicatorField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
+    public partial class DirectBillType {
+        
+        private DirectBillTypeCompanyName companyNameField;
+        
+        private AddressType addressField;
+        
+        private BankAcctTypeShareSynchInd shareSynchIndField;
+        
+        private bool shareSynchIndFieldSpecified;
+        
+        private BankAcctTypeShareMarketInd shareMarketIndField;
+        
+        private bool shareMarketIndFieldSpecified;
+        
+        private string directBill_IDField;
+        
+        /// <remarks/>
+        public DirectBillTypeCompanyName CompanyName {
+            get {
+                return this.companyNameField;
+            }
+            set {
+                this.companyNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public AddressType Address {
+            get {
+                return this.addressField;
+            }
+            set {
+                this.addressField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public BankAcctTypeShareSynchInd ShareSynchInd {
+            get {
+                return this.shareSynchIndField;
+            }
+            set {
+                this.shareSynchIndField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool ShareSynchIndSpecified {
+            get {
+                return this.shareSynchIndFieldSpecified;
+            }
+            set {
+                this.shareSynchIndFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public BankAcctTypeShareMarketInd ShareMarketInd {
+            get {
+                return this.shareMarketIndField;
+            }
+            set {
+                this.shareMarketIndField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool ShareMarketIndSpecified {
+            get {
+                return this.shareMarketIndFieldSpecified;
+            }
+            set {
+                this.shareMarketIndFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string DirectBill_ID {
+            get {
+                return this.directBill_IDField;
+            }
+            set {
+                this.directBill_IDField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
+    public partial class DirectBillTypeCompanyName : CompanyNameType {
+        
+        private string contactNameField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ContactName {
+            get {
+                return this.contactNameField;
+            }
+            set {
+                this.contactNameField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
+    public partial class PaymentFormTypeLoyaltyRedemption {
+        
+        private string certificateNumberField;
+        
+        private string memberNumberField;
+        
+        private string programNameField;
+        
+        private string promotionCodeField;
+        
+        private string[] promotionVendorCodeField;
+        
+        private string redemptionQuantityField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string CertificateNumber {
+            get {
+                return this.certificateNumberField;
+            }
+            set {
+                this.certificateNumberField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string MemberNumber {
+            get {
+                return this.memberNumberField;
+            }
+            set {
+                this.memberNumberField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ProgramName {
+            get {
+                return this.programNameField;
+            }
+            set {
+                this.programNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string PromotionCode {
+            get {
+                return this.promotionCodeField;
+            }
+            set {
+                this.promotionCodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string[] PromotionVendorCode {
+            get {
+                return this.promotionVendorCodeField;
+            }
+            set {
+                this.promotionVendorCodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="positiveInteger")]
+        public string RedemptionQuantity {
+            get {
+                return this.redemptionQuantityField;
+            }
+            set {
+                this.redemptionQuantityField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
+    public partial class PaymentFormTypeMiscChargeOrder {
+        
+        private string ticketNumberField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string TicketNumber {
+            get {
+                return this.ticketNumberField;
+            }
+            set {
+                this.ticketNumberField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
+    public partial class PaymentFormTypeOther {
+        
+        private string textField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Text {
+            get {
+                return this.textField;
+            }
+            set {
+                this.textField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
+    public partial class PaymentFormTypeVoucher {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
+    public enum PaymentFormTypePaymentTransactionTypeCode {
+        
+        /// <remarks/>
+        charge,
+        
+        /// <remarks/>
+        reserve,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
+    public partial class PaymentDetailType : PaymentFormType {
+        
+        private PaymentDetailTypePaymentAmount paymentAmountField;
+        
+        /// <remarks/>
+        public PaymentDetailTypePaymentAmount PaymentAmount {
+            get {
+                return this.paymentAmountField;
+            }
+            set {
+                this.paymentAmountField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
+    public partial class PaymentDetailTypePaymentAmount {
+        
+        private decimal amountField;
+        
+        private bool amountFieldSpecified;
+        
+        private string approvalCodeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public decimal Amount {
+            get {
+                return this.amountField;
+            }
+            set {
+                this.amountField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool AmountSpecified {
+            get {
+                return this.amountFieldSpecified;
+            }
+            set {
+                this.amountFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ApprovalCode {
+            get {
+                return this.approvalCodeField;
+            }
+            set {
+                this.approvalCodeField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
+    public partial class EquipmentType {
+        
+        private string airEquipTypeField;
+        
+        private bool changeofGaugeField;
+        
+        private string valueField;
+        
+        public EquipmentType() {
+            this.changeofGaugeField = false;
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string AirEquipType {
+            get {
+                return this.airEquipTypeField;
+            }
+            set {
+                this.airEquipTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(false)]
+        public bool ChangeofGauge {
+            get {
+                return this.changeofGaugeField;
+            }
+            set {
+                this.changeofGaugeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlTextAttribute()]
+        public string Value {
+            get {
+                return this.valueField;
+            }
+            set {
+                this.valueField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FlightSegmentType))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
+    public partial class FlightSegmentBaseType {
+        
+        private FlightSegmentBaseTypeDepartureAirport departureAirportField;
+        
+        private FlightSegmentBaseTypeArrivalAirport arrivalAirportField;
+        
+        private FlightSegmentBaseTypeOperatingAirline operatingAirlineField;
+        
+        private EquipmentType[] equipmentField;
+        
+        private System.DateTime departureDateTimeField;
+        
+        private bool departureDateTimeFieldSpecified;
+        
+        private System.DateTime arrivalDateTimeField;
+        
+        private bool arrivalDateTimeFieldSpecified;
+        
+        private string stopQuantityField;
+        
+        private string rPHField;
+        
+        private string infoSourceField;
+        
+        /// <remarks/>
+        public FlightSegmentBaseTypeDepartureAirport DepartureAirport {
+            get {
+                return this.departureAirportField;
+            }
+            set {
+                this.departureAirportField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public FlightSegmentBaseTypeArrivalAirport ArrivalAirport {
+            get {
+                return this.arrivalAirportField;
+            }
+            set {
+                this.arrivalAirportField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public FlightSegmentBaseTypeOperatingAirline OperatingAirline {
+            get {
+                return this.operatingAirlineField;
+            }
+            set {
+                this.operatingAirlineField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Equipment")]
+        public EquipmentType[] Equipment {
+            get {
+                return this.equipmentField;
+            }
+            set {
+                this.equipmentField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public System.DateTime DepartureDateTime {
+            get {
+                return this.departureDateTimeField;
+            }
+            set {
+                this.departureDateTimeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool DepartureDateTimeSpecified {
+            get {
+                return this.departureDateTimeFieldSpecified;
+            }
+            set {
+                this.departureDateTimeFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public System.DateTime ArrivalDateTime {
+            get {
+                return this.arrivalDateTimeField;
+            }
+            set {
+                this.arrivalDateTimeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool ArrivalDateTimeSpecified {
+            get {
+                return this.arrivalDateTimeFieldSpecified;
+            }
+            set {
+                this.arrivalDateTimeFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="nonNegativeInteger")]
+        public string StopQuantity {
+            get {
+                return this.stopQuantityField;
+            }
+            set {
+                this.stopQuantityField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string RPH {
+            get {
+                return this.rPHField;
+            }
+            set {
+                this.rPHField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string InfoSource {
+            get {
+                return this.infoSourceField;
+            }
+            set {
+                this.infoSourceField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
+    public partial class FlightSegmentBaseTypeDepartureAirport {
+        
+        private string locationCodeField;
+        
+        private string codeContextField;
+        
+        private string terminalField;
+        
+        private string gateField;
+        
+        public FlightSegmentBaseTypeDepartureAirport() {
+            this.codeContextField = "IATA";
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string LocationCode {
+            get {
+                return this.locationCodeField;
+            }
+            set {
+                this.locationCodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute("IATA")]
+        public string CodeContext {
+            get {
+                return this.codeContextField;
+            }
+            set {
+                this.codeContextField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Terminal {
+            get {
+                return this.terminalField;
+            }
+            set {
+                this.terminalField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Gate {
+            get {
+                return this.gateField;
+            }
+            set {
+                this.gateField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
+    public partial class FlightSegmentBaseTypeArrivalAirport {
+        
+        private string locationCodeField;
+        
+        private string codeContextField;
+        
+        private string terminalField;
+        
+        private string gateField;
+        
+        public FlightSegmentBaseTypeArrivalAirport() {
+            this.codeContextField = "IATA";
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string LocationCode {
+            get {
+                return this.locationCodeField;
+            }
+            set {
+                this.locationCodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute("IATA")]
+        public string CodeContext {
+            get {
+                return this.codeContextField;
+            }
+            set {
+                this.codeContextField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Terminal {
+            get {
+                return this.terminalField;
+            }
+            set {
+                this.terminalField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Gate {
+            get {
+                return this.gateField;
+            }
+            set {
+                this.gateField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
+    public partial class FlightSegmentBaseTypeOperatingAirline : OperatingAirlineType {
+        
+        private string operationalSuffixField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string OperationalSuffix {
+            get {
+                return this.operationalSuffixField;
+            }
+            set {
+                this.operationalSuffixField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
+    public partial class OperatingAirlineType : CompanyNameType {
+        
+        private string flightNumberField;
+        
+        private string resBookDesigCodeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string FlightNumber {
+            get {
+                return this.flightNumberField;
+            }
+            set {
+                this.flightNumberField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ResBookDesigCode {
+            get {
+                return this.resBookDesigCodeField;
+            }
+            set {
+                this.resBookDesigCodeField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
+    public partial class FlightSegmentType : FlightSegmentBaseType {
+        
+        private FlightSegmentTypeMarketingAirline marketingAirlineField;
+        
+        private string flightNumberField;
+        
+        private string tourOperatorFlightIDField;
+        
+        private string operationalSuffixField;
+        
+        /// <remarks/>
+        public FlightSegmentTypeMarketingAirline MarketingAirline {
+            get {
+                return this.marketingAirlineField;
+            }
+            set {
+                this.marketingAirlineField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string FlightNumber {
+            get {
+                return this.flightNumberField;
+            }
+            set {
+                this.flightNumberField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string TourOperatorFlightID {
+            get {
+                return this.tourOperatorFlightIDField;
+            }
+            set {
+                this.tourOperatorFlightIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string OperationalSuffix {
+            get {
+                return this.operationalSuffixField;
+            }
+            set {
+                this.operationalSuffixField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
+    public partial class FlightSegmentTypeMarketingAirline : CompanyNameType {
+        
+        private FlightSegmentTypeMarketingAirlineSingleVendorInd singleVendorIndField;
+        
+        private bool singleVendorIndFieldSpecified;
+        
+        private string resBookDesigCodeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public FlightSegmentTypeMarketingAirlineSingleVendorInd SingleVendorInd {
+            get {
+                return this.singleVendorIndField;
+            }
+            set {
+                this.singleVendorIndField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool SingleVendorIndSpecified {
+            get {
+                return this.singleVendorIndFieldSpecified;
+            }
+            set {
+                this.singleVendorIndFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ResBookDesigCode {
+            get {
+                return this.resBookDesigCodeField;
+            }
+            set {
+                this.resBookDesigCodeField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.iata.org/IATA/2007/00/IATA2010.1")]
+    public enum FlightSegmentTypeMarketingAirlineSingleVendorInd {
+        
+        /// <remarks/>
+        SingleVndr,
+        
+        /// <remarks/>
+        Alliance,
     }
     
     /// <remarks/>

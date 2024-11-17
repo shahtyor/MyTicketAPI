@@ -139,24 +139,25 @@ namespace SAEKZ {
 
          SendAmplitudeEvent(ampEv);
        }
- #endif
-          
-       return resultFlights.ToArray();
-     }
+#endif
 
-     private void ExtCarrierProcess(List<Flight> result)
-     {
-         foreach (Flight fl in result)
-         {
-             if (string.IsNullOrEmpty(fl.OperatingCarrier))
-             {
-                 var tmp = result.Where(x => x.Origin == fl.Origin && x.DepartureDateTime == fl.DepartureDateTime && !string.IsNullOrEmpty(x.OperatingCarrier)).FirstOrDefault();
-                 if (tmp != null)
-                 {
-                     fl.OperatingCarrier = tmp.OperatingCarrier;
-                 }
-             }
-         }
+            foreach (Flight r in resultFlights)
+            {
+                if (string.IsNullOrEmpty(r.OperatingCarrier) || r.OperatingCarrier == "??")
+                {
+                    var tmp = resultFlights.FirstOrDefault(x => x.Origin == r.Origin && x.DepartureDateTime == r.DepartureDateTime && !string.IsNullOrEmpty(x.OperatingCarrier) && x.OperatingCarrier != "??");
+                    if (tmp != null)
+                    {
+                        r.OperatingCarrier = tmp.OperatingCarrier;
+                    }
+                    else
+                    {
+                        r.OperatingCarrier = r.MarketingCarrier;
+                    }
+                }
+            }
+
+            return resultFlights.ToArray();
      }
   
      private bool AddDirectFlightsOnDate(List<Flight> flights, Air_MultiAvailabilityReply amavRsp, DateTime departureDate) {
@@ -224,8 +225,8 @@ namespace SAEKZ {
            Destination = f.basicFlightInfo.arrivalLocation.cityAirport,
 
            MarketingCarrier = f.basicFlightInfo.marketingCompany.identifier,
-           OperatingCarrier = f.basicFlightInfo.operatingCompany == null || String.IsNullOrEmpty(f.basicFlightInfo.operatingCompany.identifier) ?
-             f.basicFlightInfo.marketingCompany.identifier : f.basicFlightInfo.operatingCompany.identifier,
+           OperatingCarrier = f.basicFlightInfo.operatingCompany == null || String.IsNullOrEmpty(f.basicFlightInfo.operatingCompany.identifier) ? "??" : f.basicFlightInfo.operatingCompany.identifier,
+             //f.basicFlightInfo.marketingCompany.identifier : f.basicFlightInfo.operatingCompany.identifier,
 
            FlightNumber = f.basicFlightInfo.flightIdentification.number,
 
