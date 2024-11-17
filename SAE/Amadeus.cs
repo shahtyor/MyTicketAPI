@@ -143,6 +143,21 @@ namespace SAEKZ {
           
        return resultFlights.ToArray();
      }
+
+     private void ExtCarrierProcess(List<Flight> result)
+     {
+         foreach (Flight fl in result)
+         {
+             if (string.IsNullOrEmpty(fl.OperatingCarrier))
+             {
+                 var tmp = result.Where(x => x.Origin == fl.Origin && x.DepartureDateTime == fl.DepartureDateTime && !string.IsNullOrEmpty(x.OperatingCarrier)).FirstOrDefault();
+                 if (tmp != null)
+                 {
+                     fl.OperatingCarrier = tmp.OperatingCarrier;
+                 }
+             }
+         }
+     }
   
      private bool AddDirectFlightsOnDate(List<Flight> flights, Air_MultiAvailabilityReply amavRsp, DateTime departureDate) {
 

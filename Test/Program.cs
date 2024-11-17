@@ -88,9 +88,9 @@ namespace Test {
             catch (Exception ex)
             {
                 Console.Write(ex.Message + "..." + ex.StackTrace);
-            }
+            }*/
 
-            Console.WriteLine();
+            /*Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine("WSRUITPA/ATL1S2157");
             Console.WriteLine();
@@ -169,7 +169,7 @@ namespace Test {
             Console.Write(Environment.NewLine + Environment.NewLine + "3. GetDirectFlightsOnDate(BER, PAR, " + searchdt.ToString() + ")" + Environment.NewLine + Environment.NewLine);
             try
             {
-                var f = amKZ.GetDirectFlightsOnDate("ATL", "QFE", DateTime.Today.AddDays(10));
+                var f = amKZ.GetDirectFlightsOnDate("NYC", "LAX", DateTime.Today.AddDays(10));
                 Console.Write(Newtonsoft.Json.JsonConvert.SerializeObject(f));
             }
             catch (Exception ex) 
