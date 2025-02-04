@@ -647,6 +647,10 @@ namespace SAE {
                             }
                             RealyAddFlight = true;
                         }
+                        else
+                        {
+                            RealyAddFlight = false;
+                        }
                     }
                     else
                     {
